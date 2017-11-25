@@ -30,7 +30,9 @@ During the training of discriminator networks $$D$$, we want the discriminator t
 [This site](https://sigmoidal.io/beginners-review-of-gan-architectures/) will give you more information about the network architecture of GANs.
 
 ### Training Algorithm and Theoretical Results:
+The training algorithm for GANs from the [GANs Paper](https://arxiv.org/pdf/1406.2661.pdf) is show below:
 ![Training of GANs](https://github.com/simonzhai/WGAN_Intro/blob/master/pictures/GAN_Training_Algorithm.png)
+
 
 ```markdown
 Syntax highlighted code block
