@@ -29,6 +29,8 @@ During the training of discriminator networks $$D$$, we want the discriminator t
 
 [This site](https://sigmoidal.io/beginners-review-of-gan-architectures/) will give you more information about the network architecture of GANs.
 
+### Training Algorithm and Theoretical Results:
+
 ```markdown
 Syntax highlighted code block
 
