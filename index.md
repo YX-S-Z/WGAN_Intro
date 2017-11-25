@@ -7,11 +7,11 @@ This blog is written to intuitively introduce the mathematical background of the
 
 This blog will introduce 3 papers:
 
-1. [Generative Adversarial Nets(GANs)](https://arxiv.org/pdf/1406.2661.pdf)
+- [Generative Adversarial Nets(GANs)](https://arxiv.org/pdf/1406.2661.pdf)
 
-2. [Towards Principled Methods for Training Generative Adversarial Networks](https://arxiv.org/pdf/1701.04862.pdf)
+- [Towards Principled Methods for Training Generative Adversarial Networks](https://arxiv.org/pdf/1701.04862.pdf)
 
-3. [Wasserstein GANs](https://arxiv.org/pdf/1701.07875.pdf)
+- [Wasserstein GANs](https://arxiv.org/pdf/1701.07875.pdf)
 
 
 
