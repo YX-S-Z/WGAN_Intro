@@ -23,7 +23,11 @@ GANs introduced a new adversarial framework for training generative models: give
 The objective function of GANs is this:
 $$ V(G, D) = \underset{G}{\min} \underset{D}{\max} \underset{x \sim \mathbb{P}_r}{\mathbb{E}}[\log D(x)] + \underset{z \sim \mathbb{P}}{\mathbb{E}}[\log (1-D(G(z)))] $$
 
-Where the generator $$G(z)$$ is a network that generate a real sample(image) by deconvolution and $$z$$ is an input from random noise distribution(normal distribution or uniform distribution) $$p(z)$$. The discriminator $$D(x)$$ is a network(function) that represents the probability that our input samples(images) $$x$$ came from the real data rather than generative data. [This site](https://sigmoidal.io/beginners-review-of-gan-architectures/) will give you more information about the network architecture of GANs.
+Where the generator $$G(z)$$ is a network that generate a real sample(image) by deconvolution and $$z$$ is an input from random noise distribution(normal distribution or uniform distribution) $$\mathbb{P}(z)$$. The discriminator $$D(x)$$ is a network(function) that represents the probability that our input samples(images) $$x$$ came from the real data rather than generative data. 
+
+During the training of discriminator networks $$D$$, we want the discriminator to accept real data and reject generated data, thus for real samples $$x \sim \mathbb{P}_r$$ and generated samples $$G(Z),z \sim \mathbb{P}$$, we want $$D(x)$$ to be large and $$D(G(Z))$$ to be small, since $$D(x) \in [0,1]$$
+
+[This site](https://sigmoidal.io/beginners-review-of-gan-architectures/) will give you more information about the network architecture of GANs.
 
 ```markdown
 Syntax highlighted code block
