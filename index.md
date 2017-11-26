@@ -39,13 +39,8 @@ And by solving the gradient with respect to $$D(x)$$, we know that the optimal d
 
 __Analysis of Generator__
 According to the training algorithm, we start training our generator when our discriminator is welled trained, ideally, our discriminator $$D^*_G(x)=\frac{P_r(x)}{P_r(x)+P_g(x)}$$. So during the training of generator, we want to minimize our objective function
- \[
-    \begin{array}{lll}
-     C(G)& = &\underset{x \sim \mathbb{P}_r}{\mathbb{E}}[\log \frac{P_r(x)}{P_r(x)+P_g(x)}] + \underset{x \sim P_g}{\mathbb{E}}[\log \frac{P_g(x)}{P_r(x)+P_g(x)}]\\
-     & = & -\log4 + KL(\mathbb{P}_r||\frac{\mathbb{P}_r+\mathbb{P}_g}{2}) + KL(\mathbb{P}_g||\frac{\mathbb{P}_r+\mathbb{P}_g}{2})\\
-     & = & -\log4 + 2JSD(\mathbb{P}_r||\mathbb{P}_g)
-    \end{array}
-    \]
+
+$$C(G)=\underset{x \sim \mathbb{P}_r}{\mathbb{E}}[\log \frac{P_r(x)}{P_r(x)+P_g(x)}] + \underset{x \sim P_g}{\mathbb{E}}[\log \frac{P_g(x)}{P_r(x)+P_g(x)}]$$
 
 ```markdown
 Syntax highlighted code block
