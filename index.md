@@ -57,9 +57,9 @@ Where the blue curve represents $$y=-\log(x)$$ and the the red curve represents 
 It seems that by this minmax training process, we will have a generated distribution $$\mathbb{P}_g$$ that is equal to our real distribution $$\mathbb{P}_r$$ almost everywhere, so by playing this minmax game until equilibria, our goal of generating 'authentic' data is achieved. Sadly, this problem is still far from closed.
 
 ### Problems in Traditional GANs:
-During the training of traditional GANs, we will frequently encounter these two problems: __unstability__ and __mode collapsing__
+During the training of traditional GANs, we will frequently encounter these two problems: __instability__ and __mode collapsing__
 
-- __Unstability__
+- __Instability__
 
 During the training, we frequently found that our generator loss and its variance are increasing, even when their generated samples are getting better(source: [WGANs paper Figure 8](https://arxiv.org/pdf/1701.07875.pdf)):
 ![image](https://github.com/simonzhai/WGAN_Intro/blob/master/images/Unstable_generator.png?raw=true)
