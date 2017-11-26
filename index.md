@@ -75,7 +75,6 @@ From the picture above, although we randomly choose 64 $$z$$ from our prior, man
 ### Introduction
 Since the original GANs suffer from mode unstability and mode collapsing, this paper provides rigious proof to say why previous GANs will eventually encouter such issues and a suitable solutions to solve them. 
 
-###
 
 ```markdown
 Syntax highlighted code block
