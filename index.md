@@ -51,8 +51,10 @@ $$C(G)=-\log4 + 2JSD(\mathbb{P}_r||\mathbb{P}_g)$$. By the quality of JS-diverge
 
 - __The -log Alternative__
 
-In real case, during the training of generator $$G$$, people found out that the cost of generator does not decrease after using SGD, the [GAN tutorial(section 3.2)](https://arxiv.org/pdf/1701.00160.pdf) claims this problem is caused by a saturated cost function of generator. Thus, the tutorial uses another cost function of $$-\log(x)$$ instead of $$\log(1-x)$$, that is, instead of minimizing $$C(G)=\underset{z \sim P}{\mathbb{E}}[\log (1-D(G(z)))]$$, we minimize $$C(G)=\underset{z \sim P}{\mathbb{E}}[-\log (D(G(z))]$$. The difference between these two functions are shown in the following picture:
+In real case, during the training of generator $$G$$, people found out that the cost of generator does not decrease after using SGD, the [GAN tutorial(section 3.2)](https://arxiv.org/pdf/1701.00160.pdf) claims this problem is caused by a saturated cost function of generator. Thus, the tutorial uses another cost function of $$-\log(x)$$ instead of $$\log(1-x)$$, that is, instead of minimizing $$C_1(G)=\underset{z \sim P}{\mathbb{E}}[\log (1-D(G(z)))]$$, we minimize $$C_2(G)=\underset{z \sim P}{\mathbb{E}}[-\log (D(G(z))]$$. The difference between these two functions are shown in the following picture:
 ![image](https://github.com/simonzhai/WGAN_Intro/blob/master/images/-log_alternative.png?raw=true)
+Where the blue curve represents $$y=-\log(x)$$ and the the red curve represents $$y=\log(1-x)$$. Since our generator $$G$$ is updated after our discriminator $$D$$ is well trained, thus our discriminator will be stronger than our generator and $$D(G(z))$$ will be very small, say close to 0. In this case, we can learn from the picture above that the gradient of the red curve is much flatter than the blue curve, which means that 
+
 
 It seems that by this minmax training process, we will have a generated distribution $$\mathbb{P}_g$$ that is equal to our real distribution $$\mathbb{P}_r$$ almost everywhere, so by playing this minmax game until equilibria, our goal of generating 'authentic' data is achieved. Sadly, this problem is still far from closed.
 
