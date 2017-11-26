@@ -62,7 +62,7 @@ During the training, we frequently found that our generator loss and its varianc
 Mode collapsing means that our generator fails to generate various data samples, instead, it 'collapses' into some fix samples(source [WGANs paper Figure 14](https://arxiv.org/pdf/1701.07875.pdf)):
 ![image](https://github.com/simonzhai/WGAN_Intro/blob/master/images/Mode_collapse.png?raw=true)
 
-From the picture above, although we randomly choose 64 $$z$$ from our prior, many generated results collapse into few samples.
+From the picture above, although we randomly choose 64 $$z$$ from our prior, many generated results collapse into few images.
 
 ## Towards Principled Methods for Training Generative Adversarial Networks
 ### Introduction
