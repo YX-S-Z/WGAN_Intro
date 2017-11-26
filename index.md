@@ -29,7 +29,7 @@ During the training of discriminator networks $$D$$, we want the discriminator t
 
 ### Training Algorithm and Theoretical Results:
 The training algorithm for GANs from the [GANs Paper](https://arxiv.org/pdf/1406.2661.pdf) is show below:
-![Image](https://github.com/simonzhai/WGAN_Intro/blob/master/images/GAN_Training_Algorithm.png?raw=true | width = 480)
+![Image](https://github.com/simonzhai/WGAN_Intro/blob/master/images/GAN_Training_Algorithm.png|width=480?raw=true)
 
 - __Analysis of Discriminator__
 
