@@ -51,8 +51,14 @@ $$C(G)=-\log4 + 2JSD(\mathbb{P}_r||\mathbb{P}_g)$$. By the quality of JS-diverge
 
 ### Problems in Traditional GANs:
 During the training of traditional GANs, we will frequently encounter these two problems: __unstability__ and __mode collapsing__
-- __unstability__
--__mode collapsing__
+
+- __Unstability__
+
+During the training, we frequently found that our generator loss and its variance are increasing, even when their generated samples are getting better:
+
+- __Mode Collapsing__
+
+
 
 ```markdown
 Syntax highlighted code block
