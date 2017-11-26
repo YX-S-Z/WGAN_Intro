@@ -18,8 +18,8 @@ This blog will introduce 3 papers:
 ## Generative Adversarial Nets
 ### Introduction
 GANs introduced a new adversarial framework for training generative models: given some real samples(say images), simultaneously train a __generator(G)__ and a __discriminator(D)__, where **D** is trained to classify the real samples from those generative samples while **G** is trained to let **D** make mistakes during classification. 
-### Objective Function and its Mathematical Intuition:
 
+### Objective Function and its Mathematical Intuition:
 The objective function of GANs is this:
 $$ V(G, D) = \underset{G}{\min} \underset{D}{\max} \underset{x \sim \mathbb{P}_r}{\mathbb{E}}[\log D(x)] + \underset{z \sim \mathbb{P}}{\mathbb{E}}[\log (1-D(G(z)))] $$
 Where the generator $$G(z)$$ is a network that generate a real sample(image) by deconvolution and $$z$$ is an input from random noise distribution(normal distribution or uniform distribution) $$\mathbb{P}(z)$$. The discriminator $$D(x)$$ is a network(function) that represents the probability that our input samples(images) $$x$$ came from the real data rather than generative data, which indicates that: $$D(x) \in [0,1]$$. 
@@ -47,7 +47,12 @@ According to the training algorithm, we start training our generator when our di
 $$C(G)=\underset{x \sim \mathbb{P}_r}{\mathbb{E}}[\log \frac{P_r(x)}{P_r(x)+P_g(x)}] + \underset{x \sim P_g}{\mathbb{E}}[\log \frac{P_g(x)}{P_r(x)+P_g(x)}]$$
 
 Using some trick in [KL divergence](https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence) and [Jensen–Shannon divergence](https://en.wikipedia.org/wiki/Jensen%E2%80%93Shannon_divergence), our objective function for $$G$$ can be written in this way: 
-$$C(G)=-\log4 + 2JSD(\mathbb{P}_r||\mathbb{P}_g)$$. By the quality of JS-divergence, we know that: $$JSD(\mathbb{P}||\mathbb{Q})\in[0,\log2]$$. So ideally, when the objective function $$C(G)$$ reaches its minimum, we have $$JSD(\mathbb{P}_r||\mathbb{P}_g)=0$$, which indicates that $$P_r(x)=P_g(x)$$ almost everywhere.
+$$C(G)=-\log4 + 2JSD(\mathbb{P}_r||\mathbb{P}_g)$$. By the quality of JS-divergence, we know that: $$JSD(\mathbb{P}||\mathbb{Q})\in[0,\log2]$$. So ideally, when the objective function $$C(G)$$ reaches its minimum, we have $$JSD(\mathbb{P}_r||\mathbb{P}_g)=0$$, which indicates that $$P_r(x)=P_g(x)$$ almost everywhere. It seems that by this minmax training process, we will have a generated distribution $$\mathbb{P}_g$$ that is equal to our real distribution $$\mathbb{P}_r$$ almost everywhere, so by playing this minmax game until equilibria, our goal of generating 'authentic' data is achieved. Sadly, this problem is still far from closed.
+
+### Problems in Traditional GANs:
+During the training of traditional GANs, we will frequently encounter these two problems: __unstability__ and __mode collapsing__
+- __unstability__
+-__mode collapsing__
 
 ```markdown
 Syntax highlighted code block
