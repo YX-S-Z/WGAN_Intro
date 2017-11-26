@@ -58,7 +58,8 @@ During the training, we frequently found that our generator loss and its varianc
 ![image](https://github.com/simonzhai/WGAN_Intro/blob/master/images/Unstable_generator.png?raw=true)
 
 - __Mode Collapsing__
-
+Mode collapsing means that our generator fails to generate various data samples, instead, it 'collapses' into some fix samples(source [WGANs paper Figure 14](https://arxiv.org/pdf/1701.07875.pdf)):
+![image](https://github.com/simonzhai/WGAN_Intro/blob/master/images/Mode_collapse.png?raw=true)
 
 
 ```markdown
