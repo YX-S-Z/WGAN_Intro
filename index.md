@@ -21,6 +21,7 @@ GANs introduced a new adversarial framework for training generative models: give
 ### Objective Function and its Mathematical Intuition:
 
 The objective function of GANs is this:
+
 $$ V(G, D) = \underset{G}{\min} \underset{D}{\max} \underset{x \sim \mathbb{P}_r}{\mathbb{E}}[\log D(x)] + \underset{z \sim \mathbb{P}}{\mathbb{E}}[\log (1-D(G(z)))] $$
 
 Where the generator $$G(z)$$ is a network that generate a real sample(image) by deconvolution and $$z$$ is an input from random noise distribution(normal distribution or uniform distribution) $$\mathbb{P}(z)$$. The discriminator $$D(x)$$ is a network(function) that represents the probability that our input samples(images) $$x$$ came from the real data rather than generative data, which indicates that: $$D(x) \in [0,1]$$. 
@@ -33,7 +34,7 @@ During the training of discriminator networks $$D$$, we want the discriminator t
 The training algorithm for GANs from the [GANs Paper](https://arxiv.org/pdf/1406.2661.pdf) is show below:
 ![Image](https://github.com/simonzhai/WGAN_Intro/blob/master/images/GAN_Training_Algorithm.png?raw=true)
 
-For given generator $$G$$, we can substitute $$D(G(z))$$ with $$D(x)$$, because for any noise $$z$$ in the prior $$\mathbb{P}$$, $$G(z)$$ will generate a data sample(image). So the optimal discriminator $$D$$ will maximize our objective function(we can assume the probability densitiy functions here are continuous) $$V(G,D)=\int_xP_r(x)\log(D(x))+P_g(x)\log(1-D(x))dx$$, and by solving the gradient with respect to $$D(x)$$, we know that the optimal discriminator is $$D^*_G(x)=\frac{P_r(x)}{P_r(x)+P_g(x)}$$
+For given generator $$G$$, we can substitute $$D(G(z))$$ with $$D(x)$$, because for any noise $$z$$ in the prior $$\mathbb{P}$$, $$G(z)$$ will generate a data sample(image). So the optimal discriminator $$D$$ will maximize our objective function(assuming the density functions are continuous) $$V(G,D)=\int_xP_r(x)\log(D(x))+P_g(x)\log(1-D(x))dx$$, and by solving the gradient with respect to $$D(x)$$, we know that the optimal discriminator is $$D^*_G(x)=\frac{P_r(x)}{P_r(x)+P_g(x)}$$
 
 ```markdown
 Syntax highlighted code block
