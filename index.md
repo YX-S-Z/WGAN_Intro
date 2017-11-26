@@ -14,7 +14,6 @@ This blog will introduce 3 papers:
 - [Wasserstein GANs](https://arxiv.org/pdf/1701.07875.pdf)
 
 
-
 ## Generative Adversarial Nets
 ### Introduction
 GANs introduced a new adversarial framework for training generative models: given some real samples(say images), simultaneously train a __generator(G)__ and a __discriminator(D)__, where **D** is trained to classify the real samples from those generative samples while **G** is trained to let **D** make mistakes during classification. 
