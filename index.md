@@ -33,7 +33,7 @@ During the training of discriminator networks $$D$$, we want the discriminator t
 The training algorithm for GANs from the [GANs Paper](https://arxiv.org/pdf/1406.2661.pdf) is show below:
 ![Image](https://github.com/simonzhai/WGAN_Intro/blob/master/images/GAN_Training_Algorithm.png?raw=true)
 
-For given generator $$G$$, the optimal discriminato $$D$$ will maximize our objective function(we can assume the probability densitiy functions here are continuous) $$V(G,D)=\int_xP_r(x)\log(D(x))+P_g(x)\log(1-D(x))dx$$.
+For given generator $$G$$, we can substitute $$D(G(z))$$ with $$D(x)$$, because for any noise $$z$$ in the prior $$\mathbb{P}$$, $$G(z)$$ will generate a data sample(image). So the optimal discriminator $$D$$ will maximize our objective function(we can assume the probability densitiy functions here are continuous) $$V(G,D)=\int_xP_r(x)\log(D(x))+P_g(x)\log(1-D(x))dx$$, and by solving the gradient with respect to $$D(x)$$, we can 
 
 ```markdown
 Syntax highlighted code block
