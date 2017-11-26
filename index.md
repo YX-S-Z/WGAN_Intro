@@ -64,6 +64,10 @@ Mode collapsing means that our generator fails to generate various data samples,
 
 From the picture above, we can see that many generated samples collapse into few samples.
 
+## Towards Principled Methods for Training Generative Adversarial Networks
+### Introduction
+Since the original GANs suffer from mode unstability and mode collapsing, this paper provides rigious proof to say why previous GANs will eventually encouter such issues and a suitable solutions to solve them. 
+
 ```markdown
 Syntax highlighted code block
 
