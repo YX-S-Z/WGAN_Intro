@@ -33,7 +33,7 @@ During the training of discriminator networks $$D$$, we want the discriminator t
 The training algorithm for GANs from the [GANs Paper](https://arxiv.org/pdf/1406.2661.pdf) is show below:
 ![Algorithm for Training GANs](https://github.com/simonzhai/WGAN_Intro/blob/master/pictures/GAN_Training_Algorithm.png)
 
-For given generator $$G$$, the optimal discriminato $$D$$ will maximize our objective function $$V(G,D)=\underset{G}{\min} \underset{D}{\max} \underset{x \sim \mathbb{P}_r}{\mathbb{E}}[\log D(x)] + \underset{z \sim \mathbb{P}}{\mathbb{E}}[\log (1-D(G(z)))]=\int_xP_r(x)\log(D(x))+P_g(x)\log(1-D(x))dx$$
+For given generator $$G$$, the optimal discriminato $$D$$ will maximize our objective function(we can assume the probability densitiy functions here are continuous) $$V(G,D)=\int_xP_r(x)\log(D(x))+P_g(x)\log(1-D(x))dx$$.
 
 ```markdown
 Syntax highlighted code block
