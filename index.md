@@ -41,8 +41,9 @@ And by solving the gradient with respect to $$D(x)$$, we know that the optimal d
 - __Analysis of Generator__
 
 According to the training algorithm, we start training our generator when our discriminator is welled trained, ideally, our discriminator $$D^*_G(x)=\frac{P_r(x)}{P_r(x)+P_g(x)}$$. So during the training of generator, we want to minimize our objective function
-
 $$C(G)=\underset{x \sim \mathbb{P}_r}{\mathbb{E}}[\log \frac{P_r(x)}{P_r(x)+P_g(x)}] + \underset{x \sim P_g}{\mathbb{E}}[\log \frac{P_g(x)}{P_r(x)+P_g(x)}]$$
+Using some trick in [KL divergence](https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence) and [Jensen–Shannon divergence](https://en.wikipedia.org/wiki/Jensen%E2%80%93Shannon_divergence), our objective function for $G$ can be written in this way: 
+$$C(G)=-\log4 + 2JSD(\mathbb{P}_r||\mathbb{P}_g)$$
 
 ```markdown
 Syntax highlighted code block
