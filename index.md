@@ -96,4 +96,8 @@ This means that the intersect between the supports of $$\mathbb{P}_r$$ and $$\ma
 ![image](https://github.com/simonzhai/WGAN_Intro/blob/master/images/Perfect_descriminator_below.png?raw=true)
 In the picture above, assume that $$\mathcal{M}$$ is the red submanifold and $$\mathcal{P}$$ is the green submanifold, both of them are 2 dimensional manifolds in 3 dimensional space. An obvious optimal discriminator will be a sigmiod like surface, which classifies all points above the blue manifold with true and below blue manifold with fake. An interesting attribute of sigmoid like function is that it suffers from saturated gradients, in the picture above, we can learn that this discriminator(blue manifold) can perfectly discriminate these two manifolds and gradient descend does not work on the supports of the $$\mathcal{M}$$(green manifold) and $$\mathcal{P}$$(red manifold).
 
+2. When: $$\mathcal{M}\cap\mathcal{P}\neq\emptyset$$
+
+
+
 
