@@ -82,7 +82,7 @@ Since the original GANs suffers from mode __unstability__ and __mode collapsing_
 
 ### The reasons for failure in training GANs
 
-In real cases, we can assume that the [supports](https://en.wikipedia.org/wiki/Support_(mathematics)) of our real sample distribution $$\mathbb{P}_r$$ and our generated sample distribution $$\mathbb{P}_g$$ are [submanifolds](https://en.wikipedia.org/wiki/Submanifold) $$\mathcal{M}$$ and $$\mathcal{P}$$ in our feature space $$\mathcal{X}$$(the vector space of final fully connected layer in the discriminator network). And we can always find a optimal discriminator $$D(x)$$, s.t. 
+In real cases, we can assume that the [supports](https://en.wikipedia.org/wiki/Support_(mathematics)) of our real sample distribution $$\mathbb{P}_r$$ and our generated sample distribution $$\mathbb{P}_g$$ are [submanifolds](https://en.wikipedia.org/wiki/Submanifold) $$\mathcal{M}$$ and $$\mathcal{P}$$ in our feature space $$\mathcal{X}$$(the vector space of final fully connected layer in the discriminator network). And we can always find a optimal discriminator $$D(x)\arrow [0,1]$$, s.t. $$D(x)|_{x\in\mathcal{M}}=1$$, $$D(x)|_{x\in\mathcal{P}}=0$$ and $$\nabla_xD(x)|_{x\in\mathcal{M}\cup\mathcal{P}}=0$$ almost everywhere.
 
 ```markdown
 Syntax highlighted code block
