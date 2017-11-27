@@ -150,7 +150,7 @@ Also, [lemma 2](https://arxiv.org/pdf/1701.04862.pdf) tells us that in real case
 
 The picture above tells us one thing about this lemma: if I randomly put 2 manifolds of gaussian distributions into a 3 dimensional space, these two manifolds are perfectly aligned if and only if the parameters(mean vector and covariance matrix) are the same. Intuitively speaking, this probability is extremely small.
 
-Well here is another vivid yet a little bit bloody example: Imagine that every person is a 3 dimensional manifold in our 4 dimensional space(time is added as another dimension). If all people are randomly distributed in this 4 dimensional space, in most cases, given 2 people, they are disjoint. 
+Well here is another vivid yet a little bit bloody example: imagine that every person is a 3 dimensional manifold in our 4 dimensional space(time is added as another dimension). If all people are randomly distributed in this 4 dimensional space, in most cases, given 2 people, they are disjoint. 
 
 <p align="center">
 <img src="https://github.com/simonzhai/WGAN_Intro/blob/master/images/Two_men.png?raw=true" width="360">
