@@ -162,7 +162,7 @@ Well sometimes, there is some probability when the manifolds of two people inter
 <img src="https://github.com/simonzhai/WGAN_Intro/blob/master/images/Handshake_two_men.png?raw=true" width="360">
 </p>
 
-However, the situation that the two manifolds of these two people are perfectly aligned is when __a part of one guy's body is inside the other's body__, which is extremely rare in real cases. This may sound very bloody, but it will give you some intuition why the manifold of two random probability distribution barely perfectly aligned.
+However, the situation that the two manifolds of these two people are perfectly aligned is when __a part of one guy's body is inside the other's body__, which is extremely rare in real cases. This may sound very bloody, but it will give you some intuition why the manifolds of two random probability distribution barely perfectly aligned.
 
 <p align="center">
 <img src="https://github.com/simonzhai/WGAN_Intro/blob/master/images/Bloody_two_men.png?raw=true" width="360">
