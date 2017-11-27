@@ -101,16 +101,18 @@ In the picture above, assume that $$\mathcal{M}$$ is the red submanifold and $$\
 To understand the proof in this case, we have to introduce a mathematical idea of [Transversal Intersection](http://mathworld.wolfram.com/TransversalIntersection.html) and [perfectly aligned(definition 2.2)](https://arxiv.org/pdf/1701.04862.pdf) between two manifolds. If you don't understand the math behind these two idea, it is totally fine, these following two pictures will give you some idea about perfect aligned manifolds and not perfectly aligned manifolds:
 ![image](https://github.com/simonzhai/WGAN_Intro/blob/master/images/perfectly_align.png?raw=true)
 
-__two perfectly aligned circles in 3 dimensional space, their intersection is a oval like shape__
+__two perfectly aligned circles in 3 dimensional space, their intersection is a oval like shape(2 dimensional manifold)__
 
 ![image](https://github.com/simonzhai/WGAN_Intro/blob/master/images/not_perfectly_align.png?raw=true)
 
-__two not perfectly aligned circles in 3 dimensional space, their intersection is a line segment__
+__two not perfectly aligned circles in 3 dimensional space, their intersection is a line segment(1 dimensional manifold)__
 
 ![image](https://github.com/simonzhai/WGAN_Intro/blob/master/images/Not_perfectly_align_gaussian.png?raw=true)
 
-__two not perfectly aligned gaussian spheres in 3 dimensional space, their intersection is a curve between the green and red gaussian distribution__
+__two not perfectly aligned gaussian spheres in 3 dimensional space, their intersection is a curve between the green and red gaussian distribution(1 dimensional manifold)__
 
 From the previous pictures we can have some intuitive concepts about __perfectly aligned__: when two manifolds $$\mathcal{M}$$ and $$\mathcal{P}$$ are not perfectly aligned, the [measure](https://en.wikipedia.org/wiki/Measure_(mathematics)) of the $$\mathcal{M}\cap\mathcal{P}$$ intersect strictly less than the measure of both $$\mathcal{M}$$ and $$\mathcal{P}$$, which means that $$\mathcal{M}\cap\mathcal{P}$$ has __0__ measure on $$\mathcal{M}$$ and $$\mathcal{P}$$. Speaking in a intuitive way, when two intersected manifolds are __not perfect aligned__, their intersection area are very small(comparing with their original size).
 
 Also, [lemma 2](https://arxiv.org/pdf/1701.04862.pdf) tells us that in real case, the probability that two random distributions are perfectly aligned are actually extremely small(equals to 0). Here are some pictures to intuitively explain this lemma:
+![image](https://github.com/simonzhai/WGAN_Intro/blob/master/images/Nearly_perfectly_align_gaussian.png)
+__In this picture, I shift the red gaussian distribution by -0.01 to the left and the greed gaussian distribution by +0.01 to the right, their intersection is still a curve(1 dimensional manifold)__
