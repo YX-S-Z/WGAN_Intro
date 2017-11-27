@@ -148,7 +148,7 @@ Also, [lemma 2](https://arxiv.org/pdf/1701.04862.pdf) tells us that in real case
 
 - __two nearly perfectly aligned gaussian sphere(shift red manifold -0.01 to the left and the greed manifold by +0.01 to the right), their intersection is still a curve(1 dimensional manifold)__
 
-The picture above tells us one thing about this lemma: if I randomly put 2 manifolds of gaussian distributions into a 3 dimensional space, these two manifolds are perfectly aligned if and only if the parameters(mean vector and covariance matrix) are the same. Intuitively speaking, this probability is extremely small.
+The picture above tells us one thing about this lemma: if we randomly put 2 manifolds of gaussian distributions into a 3 dimensional space, these two manifolds are perfectly aligned if and only if the parameters(mean vector and covariance matrix) are the same. Intuitively speaking, this probability is extremely small.
 
 Well here is another vivid yet a little bit bloody example: imagine that every person is a 3 dimensional manifold in our 4 dimensional space(time is added as another dimension). If all people are randomly distributed in this 4 dimensional space, in most cases, given 2 people, they are disjoint. 
 
@@ -167,3 +167,5 @@ However, the situation that the two manifolds of these two people are perfectly 
 <p align="center">
 <img src="https://github.com/simonzhai/WGAN_Intro/blob/master/images/Bloody_two_men.png?raw=true" width="360">
 </p>
+
+Here, we can safely say that even when the manifolds $$\mathcal{M},\mathcal{P}$$ of our two distribution $$\mathbb{P}_r,\mathbb{P}_g$$ are not disjoint, their intersection area is very small with respect to their own size(have 0 measure on manifold $$\mathcal{M}$$ and $\mathcal{P}$). 
