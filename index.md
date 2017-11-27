@@ -168,4 +168,6 @@ However, the situation that the two manifolds of these two people are perfectly 
 <img src="https://github.com/simonzhai/WGAN_Intro/blob/master/images/Bloody_two_men.png?raw=true" width="360">
 </p>
 
-Here, we can safely say that even when the manifolds $$\mathcal{M},\mathcal{P}$$ of our two distribution $$\mathbb{P}_r,\mathbb{P}_g$$ are not disjoint, their intersection area is very small with respect to their own size(have 0 measure on manifold $$\mathcal{M}$$ and $$\mathcal{P}$$). 
+Here, we can safely say that even when the manifolds $$\mathcal{M},\mathcal{P}$$ of our two distribution $$\mathbb{P}_r,\mathbb{P}_g$$ are not disjoint, their intersection area $$\mathcal{M}\cap\mathcal{P}$$ is very small with respect to their own size(have 0 measure on manifold $$\mathcal{M}$$ and $$\mathcal{P}$$). 
+
+Also, we can denote $$\mathcal{L} = \mathcal{M} \cap \mathcal{P}$$ as the intersect of $$\mathcal{M}$$ and $$\mathcal{P}$$, $$\tilde{\mathcal{M}} = \mathcal{M}\backslash\mathcal{L}$$ and $$\tilde{\mathcal{P}} = \mathcal{P}\backslash\mathcal{L}$$. From the previous proof, we know that the measure of $$\mathcal{L}$$ is 0 with respect to $$\mathcal{M}$$ and $$\mathcal{P}$$. Also according to the definition of $$\tilde{\mathcal{M}}$$ and $$\tilde{\mathcal{P}}$$, we know that: $$\tilde{\mathcal{M}}\cap\tilde{\mathcal{P}}=\emptyset$$.
