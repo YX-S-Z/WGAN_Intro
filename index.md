@@ -111,7 +111,7 @@ To intuitively understand this theorem, we can divide this problem in two parts:
 This means that the intersect between the supports of $$\mathbb{P}_r$$ and $$\mathbb{P}_g$$ is empty. In this cases, the following picture will provide some intuitive explanations(for detailed proof, check theorem 2.1 in [this paper](https://arxiv.org/pdf/1701.04862.pdf)):
 
 <p align="center">
-  <img src="https://github.com/simonzhai/WGAN_Intro/blob/master/images/Perfect_descriminator_below.png?raw=true" width="600">
+  <img src="https://github.com/simonzhai/WGAN_Intro/blob/master/images/Perfect_descriminator_below.png?raw=true" width="480">
 </p>
 
 In the picture above, assume that $$\mathcal{M}$$ is the red submanifold and $$\mathcal{P}$$ is the green submanifold, both of them are 2 dimensional manifolds in 3 dimensional space. An obvious optimal discriminator will be a sigmiod like surface, which classifies all points above the blue manifold with true and below blue manifold with fake. An interesting attribute of sigmoid like function is that it suffers from saturated gradients, in the picture above, we can learn that this discriminator(blue manifold) can perfectly discriminate these two manifolds and gradient descend does not work on the supports of the $$\mathcal{M}$$(green manifold) and $$\mathcal{P}$$(red manifold).
@@ -121,19 +121,19 @@ In the picture above, assume that $$\mathcal{M}$$ is the red submanifold and $$\
 To understand the proof in this case, we have to introduce a mathematical idea of [Transversal Intersection](http://mathworld.wolfram.com/TransversalIntersection.html) and [perfectly aligned(definition 2.2)](https://arxiv.org/pdf/1701.04862.pdf) between two manifolds. If you don't understand the math behind these two idea, it is totally fine, these following two pictures will give you some idea about perfect aligned manifolds and not perfectly aligned manifolds:
 
 <p align="center">
-  <img src="https://github.com/simonzhai/WGAN_Intro/blob/master/images/perfectly_align.png?raw=true" width="600">
+  <img src="https://github.com/simonzhai/WGAN_Intro/blob/master/images/perfectly_align.png?raw=true" width="480">
 </p>
 
 - __two perfectly aligned circles in 3 dimensional space, their intersection is a oval like shape(2 dimensional manifold)__
 
 <p align="center">
-  <img src="https://github.com/simonzhai/WGAN_Intro/blob/master/images/not_perfectly_align.png?raw=true" width="600">
+  <img src="https://github.com/simonzhai/WGAN_Intro/blob/master/images/not_perfectly_align.png?raw=true" width="480">
 </p>
 
 - __two not perfectly aligned circles in 3 dimensional space, their intersection is a line segment(1 dimensional manifold)__
 
 <p align="center">
-  <img src="https://github.com/simonzhai/WGAN_Intro/blob/master/images/Not_perfectly_align_gaussian.png?raw=true" width="600">
+  <img src="https://github.com/simonzhai/WGAN_Intro/blob/master/images/Not_perfectly_align_gaussian.png?raw=true" width="480">
 </p>
 
 - __two not perfectly aligned gaussian spheres in 3 dimensional space, their intersection is a curve between the green and red gaussian distribution(1 dimensional manifold)__
@@ -143,7 +143,7 @@ From the previous pictures we can have some intuitive concepts about __perfectly
 Also, [lemma 2](https://arxiv.org/pdf/1701.04862.pdf) tells us that in real case, the probability that two random distributions are perfectly aligned are actually __extremely small(equals to 0)__. Here are some pictures to intuitively explain this lemma:
 
 <p align="center">
-<img src="https://github.com/simonzhai/WGAN_Intro/blob/master/images/Nearly_perfectly_align_gaussian.png?raw=true" width="600">
+<img src="https://github.com/simonzhai/WGAN_Intro/blob/master/images/Nearly_perfectly_align_gaussian.png?raw=true" width="480">
 </p>
 
 - __two nearly perfectly aligned gaussian sphere(shift red manifold -0.01 to the left and the greed manifold by +0.01 to the right), their intersection is still a curve(1 dimensional manifold)__
