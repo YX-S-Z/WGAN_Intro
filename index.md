@@ -182,5 +182,5 @@ Also, we can denote $$\mathcal{L} = \mathcal{M} \cap \mathcal{P}$$ as the inters
 
 Guess what, right now we have two disjoint manifold($$\tilde{\mathcal{M}}$$ and $$\tilde{\mathcal{P}}$$) again! And by the same process from part (a), we can still find a optimal discriminator $$D^*(x)$$, s.t. $$D^*(x)$$ can perfectly discriminate $$\tilde{\mathcal{M}}$$ and $$\tilde{\mathcal{P}}$$! Well, how about the intersection $$\mathcal{L}$$? Well, recall the definition of [almost everywhere](https://en.wikipedia.org/wiki/Almost_everywhere) we mentioned before, we actually don't care about the classification on $$\mathcal{L}$$, because the size(measure) of $$\mathcal{L}$$ is too small with respect to $$\mathcal{M}$$ and $$\mathcal{P}$$.
 
-Okay, at this point, we have went through the proof of the __perfectly discriminator theorem__ intuitively. By this theorem explains why the traditional way of training GANs will sometimes encounter generator failure.
+Okay, at this point, we have intuitively went through the proof of the __perfectly discriminator theorem__. And this theorem explains why the traditional way of training GANs will sometimes encounter generator failure.
 
