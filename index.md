@@ -72,9 +72,9 @@ It seems that by this minmax training process, we will have a generated distribu
 
 ### Problems in Traditional GANs:
 
-During the training of traditional GANs, we will frequently encounter these three problems: __difficulty__, __instability__, and __mode collapsing__
+During the training of traditional GANs, we will frequently encounter these three problems: __generator failure__, __instability__, and __mode collapsing__
 
-- __Difficulty__
+- __Generator Failure__
 
 Not all training of GANs will finally generate meaningful results, what sometimes happens is that while the discriminator gets better during training, generator will fail and eventually generate garbage(source: [WGANs paper Figure 12](https://arxiv.org/pdf/1701.07875.pdf)):
 
@@ -102,7 +102,7 @@ From the picture above, although we randomly choose 64 $$z$$ from our prior, man
 
 ### Introduction
 
-Since the original GANs suffers from mode __unstability__ and __mode collapsing__, this paper provides rigious proof to say why previous GANs will eventually encouter those two issues and provides a __better cost function(or a better metric to evaluate the 'similarity' between two probability distributions)__ to avoid these issues. 
+Since the original GANs suffers from __generator failure__, __instability__, and __mode collapsing__, this paper provides rigious proof to say why previous GANs will eventually encouter those two issues and provides a __better cost function(or a better metric to evaluate the 'similarity' between two probability distributions)__ to avoid these issues. 
 
 ### The reasons for generator failure in GANs
 
@@ -180,7 +180,7 @@ Here, we can safely say that even when the manifolds $$\mathcal{M},\mathcal{P}$$
 
 Also, we can denote $$\mathcal{L} = \mathcal{M} \cap \mathcal{P}$$ as the intersect of $$\mathcal{M}$$ and $$\mathcal{P}$$, $$\tilde{\mathcal{M}} = \mathcal{M}\backslash\mathcal{L}$$ and $$\tilde{\mathcal{P}} = \mathcal{P}\backslash\mathcal{L}$$. From the previous proof, we know that the measure of $$\mathcal{L}$$ is 0 with respect to $$\mathcal{M}$$ and $$\mathcal{P}$$. Also according to the definition of $$\tilde{\mathcal{M}}$$ and $$\tilde{\mathcal{P}}$$, we know that: $$\tilde{\mathcal{M}}\cap\tilde{\mathcal{P}}=\emptyset$$.
 
-Guess what, right now we have two disjoint manifold($$\tilde{\mathcal{M}}$$ and $$\tilde{\mathcal{P}}$$) again! And by the same process from part (a), we can still find a optimal discriminator $$D^*(x)$$, s.t. $$D^*(x)$$ can perfectly discriminate $$\tilde{\mathcal{M}}$$ and $$\tilde{\mathcal{P}}$$! Well, how about the intersection $$\mathcal{L}$$? Well, recall the definition of [almost everywhere](https://en.wikipedia.org/wiki/Almost_everywhere) we mentioned before, we actually don't care about the classification on $$\mathcal{L}$$, because the size(measure) of $$\mathcal{L}$$ is too small with respect to $$\mathcal{M}$$ and $$\mathcal{P}$$.
+Guess what, right now we have two disjoint manifolds($$\tilde{\mathcal{M}}$$ and $$\tilde{\mathcal{P}}$$) again! And by the same process from part (a), we can still find a optimal discriminator $$D^*(x)$$, s.t. $$D^*(x)$$ can perfectly discriminate $$\tilde{\mathcal{M}}$$ and $$\tilde{\mathcal{P}}$$. Well, how about the intersection $$\mathcal{L}$$? Well, recall the definition of [almost everywhere](https://en.wikipedia.org/wiki/Almost_everywhere) we mentioned before, we actually don't care about the classification on $$\mathcal{L}$$, because the size(measure) of $$\mathcal{L}$$ is too small with respect to $$\mathcal{M}$$ and $$\mathcal{P}$$.
 
 Okay, at this point, we have intuitively went through the proof of the __perfectly discriminator theorem__. And this theorem explains why the traditional way of training GANs will sometimes encounter generator failure.
 
