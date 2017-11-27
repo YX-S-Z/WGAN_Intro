@@ -111,4 +111,4 @@ __two not perfectly aligned circles in 3 dimensional space__
 
 __two not perfectly aligned gaussian spheres in 3 dimensional space__
 
-From the previous pictures we can have some intuitive concepts about __perfectly aligned__: when two manifolds $$\mathcal{M}$$ and $$\mathcal{P}$$ are not perfectly aligned, the [measure](https://en.wikipedia.org/wiki/Measure_(mathematics)) of the $$\mathcal{M}\cap\mathcal{P}$$ intersect strictly less than the measure of both $$\mathcal{M}$$ and $$\mathcal{P}$$.
+From the previous pictures we can have some intuitive concepts about __perfectly aligned__: when two manifolds $$\mathcal{M}$$ and $$\mathcal{P}$$ are not perfectly aligned, the [measure](https://en.wikipedia.org/wiki/Measure_(mathematics)) of the $$\mathcal{M}\cap\mathcal{P}$$ intersect strictly less than the measure of both $$\mathcal{M}$$ and $$\mathcal{P}$$. Also, [lemma 2](https://arxiv.org/pdf/1701.04862.pdf) tells us that in real case, the probability that two random distributions are perfectly aligned are actually extremely small(equals to 0). 
