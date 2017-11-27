@@ -93,7 +93,7 @@ To intuitively understand this theorem, we can divide this problem in two parts:
 1. When: $$\mathcal{M}\cap\mathcal{P}=\emptyset$$ 
 
 This means that the intersect between the supports of $$\mathbb{P}_r$$ and $$\mathbb{P}_g$$ is empty. In this cases, the following picture will provide some intuitive explanations:
-![image](https://github.com/simonzhai/WGAN_Intro/blob/master/images/Perfect_discriminator_below.png?raw=true)
+![image](https://github.com/simonzhai/WGAN_Intro/blob/master/images/Perfect_descriminator_below.png?raw=true)
 In the picture above, assume that $$\mathcal{M}$$ is the red submanifold and $$\mathcal{P}$$ is the green submanifold, both of them are 2 dimensional manifolds in 3 dimensional space. An obvious optimal discriminator will be a sigmiod like surface, which classifies all points above the blue manifold with true and below blue manifold with fake.
 
 
