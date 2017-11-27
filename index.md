@@ -82,9 +82,9 @@ Since the original GANs suffers from mode __unstability__ and __mode collapsing_
 
 ### The reasons for failure in training GANs
 
-In real cases, we can prove that there is always a perfect discriminator $$D^*(x)$$ that can always perfectly distinguish real data from generated data, and gradient descend method has no effect on this discriminator $$D^*(x)$$.
+In real cases, we can prove that there is always a **perfect** discriminator $$D^*(x)$$ that can always perfectly distinguish real data from generated data, and gradient descend method **has no effect** on this discriminator $$D^*(x)$$, which explains why our discriminator gets better and our generator fails during training. I will provide an intuitive explanations for mathematical definitions and proof in this paper.  
 
-In a mathematical way, we can assume that the [supports](https://en.wikipedia.org/wiki/Support_(mathematics)) of our real sample distribution $$\mathbb{P}_r$$ and our generated sample distribution $$\mathbb{P}_g$$ are [submanifolds](https://en.wikipedia.org/wiki/Submanifold) $$\mathcal{M}$$ and $$\mathcal{P}$$ in our feature space $$\mathcal{X}$$(the vector space of final fully connected layer in the discriminator network). And we can always find a optimal discriminator $$D(x)\rightarrow[0,1]$$, s.t. $$D(x)=1,(x\in\mathcal{M})$$, $$D(x)=0,(x\in\mathcal{P})$$ and $$\nabla_xD(x)=0,({x\in\mathcal{M}\cup\mathcal{P}})$$ [almost everywhere](https://en.wikipedia.org/wiki/Almost_everywhere).
+We can assume that the [supports](https://en.wikipedia.org/wiki/Support_(mathematics)) of our real sample distribution $$\mathbb{P}_r$$ and our generated sample distribution $$\mathbb{P}_g$$ are [submanifolds](https://en.wikipedia.org/wiki/Submanifold) $$\mathcal{M}$$ and $$\mathcal{P}$$ in our feature space $$\mathcal{X}$$(the vector space of final fully connected layer in the discriminator network). And we can always find a optimal discriminator $$D(x)\rightarrow[0,1]$$, s.t. $$D(x)=1,(x\in\mathcal{M})$$, $$D(x)=0,(x\in\mathcal{P})$$ and $$\nabla_xD(x)=0,({x\in\mathcal{M}\cup\mathcal{P}})$$ [almost everywhere](https://en.wikipedia.org/wiki/Almost_everywhere).
 
 ```markdown
 Syntax highlighted code block
