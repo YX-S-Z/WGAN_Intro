@@ -98,7 +98,7 @@ Since the original GANs suffers from mode __unstability__ and __mode collapsing_
 
 ### The reasons for failure in training GANs
 
-In real cases, we can prove that there is always a **perfect** discriminator $$D^*(x)$$ that can perfectly distinguish real data from generated data, and gradient descend method **has no effect** on this discriminator $$D^*(x)$$, which explains why our discriminator gets better and our generator fails during training.
+In real cases, we can prove that there is always a **perfect** discriminator $$D^*(x)$$ that can perfectly distinguish real data from generated data, and gradient descend method **has no effect** on this discriminator $$D^*(x)$$, which explains why our __discriminator gets better and our generator fails__ during training.
 
 - __Perfect Discriminator Theorem([Section 2.1](https://arxiv.org/pdf/1701.04862.pdf))__
 
@@ -173,3 +173,5 @@ Here, we can safely say that even when the manifolds $$\mathcal{M},\mathcal{P}$$
 Also, we can denote $$\mathcal{L} = \mathcal{M} \cap \mathcal{P}$$ as the intersect of $$\mathcal{M}$$ and $$\mathcal{P}$$, $$\tilde{\mathcal{M}} = \mathcal{M}\backslash\mathcal{L}$$ and $$\tilde{\mathcal{P}} = \mathcal{P}\backslash\mathcal{L}$$. From the previous proof, we know that the measure of $$\mathcal{L}$$ is 0 with respect to $$\mathcal{M}$$ and $$\mathcal{P}$$. Also according to the definition of $$\tilde{\mathcal{M}}$$ and $$\tilde{\mathcal{P}}$$, we know that: $$\tilde{\mathcal{M}}\cap\tilde{\mathcal{P}}=\emptyset$$.
 
 Guess what, right now we have two disjoint manifold($$\tilde{\mathcal{M}}$$ and $$\tilde{\mathcal{P}}$$) again! And by the same process from part (a), we can still find a optimal discriminator $$D^*(x)$$, s.t. $$D^*(x)$$ can perfectly discriminate $$\tilde{\mathcal{M}}$$ and $$\tilde{\mathcal{P}}$$! Well, how about the intersection $$\mathcal{L}$$? Well, recall the definition of [almost everywhere](https://en.wikipedia.org/wiki/Almost_everywhere) we mentioned before, we actually don't care about the classification on $$\mathcal{L}$$, because the size(measure) of $$\mathcal{L}$$ is too small with respect to $$\mathcal{M}$$ and $$\mathcal{P}$$.
+
+Okay, at this point, we have went through the proof of the __perfectly discriminator theorem__ intuitively. By this theorem explains why the traditional way of training GANs will sometimes encounter generator failure.
