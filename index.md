@@ -80,9 +80,9 @@ From the picture above, although we randomly choose 64 $$z$$ from our prior, man
 ### Introduction
 Since the original GANs suffers from mode __unstability__ and __mode collapsing__, this paper provides rigious proof to say why previous GANs will eventually encouter those two issues and provides a __better cost function(or a better metric to evaluate the 'similarity' between two probability distributions)__ to avoid these issues. 
 
-### Problems with JS/KL divergence as metric to evaluate 'similarity' between distributions
+### The reasons for failure in training GANs
 
-
+In real cases, we can assume that the [supports](https://en.wikipedia.org/wiki/Support_(mathematics)) of our real sample distribution $$\mathbb{P}_r$$ and our generated sample distribution $$\mathbb{P}_g$$ are [submanifolds](https://en.wikipedia.org/wiki/Submanifold) in our feature space(say the vector space of final fully connected layer in the discriminator network). 
 
 ```markdown
 Syntax highlighted code block
