@@ -100,8 +100,13 @@ In the picture above, assume that $$\mathcal{M}$$ is the red submanifold and $$\
 
 To understand the proof in this case, we have to introduce a mathematical idea of [Transversal Intersection](http://mathworld.wolfram.com/TransversalIntersection.html) and [perfectly aligned(definition 2.2)](https://arxiv.org/pdf/1701.04862.pdf) between two manifolds. If you don't understand the math behind these two idea, it is totally fine, these following two pictures will give you some idea about perfect aligned manifolds and not perfectly aligned manifolds:
 ![image](https://github.com/simonzhai/WGAN_Intro/blob/master/images/perfectly_align.png?raw=true)
+
 __two perfectly aligned circles in 3 dimensional space__
+
 ![image](https://github.com/simonzhai/WGAN_Intro/blob/master/images/not_perfectly_align.png?raw=true)
+
 __two not perfectly aligned circles in 3 dimensional space__
+
 ![image](https://github.com/simonzhai/WGAN_Intro/blob/master/images/Not_perfectly_align_gaussian.png?raw=true)
+
 __two not perfectly aligned gaussian spheres in 3 dimensional space__
