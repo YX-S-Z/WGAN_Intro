@@ -3,7 +3,7 @@
 </script>
 # A Brief Introduction to Wasserstein GANs
 
-This blog is written to intuitively introduce the mathematical background of the well known paper [Wasserstein GANs(WGANs)](https://arxiv.org/pdf/1701.07875.pdf). In 2014, a new framework for generative models: [Generative Adversarial Nets(GANs)](https://arxiv.org/pdf/1406.2661.pdf) was introduced using the nowadays deep learning frameworks and achieved great success. However, unlike some other supervised classification tasks, GANs are often found to be **difficult**(the generator generate nothing but garbage), **unstable**(the training losses do not converge), and suffers from **mode collapsing**(the generative fail to generative diverse samples). Notice that previous GANs suffer these problems, WGANs, a new GANs framework came out to solve them. 
+This blog is written to __intuitively__ introduce the mathematical background of the well known paper [Wasserstein GANs(WGANs)](https://arxiv.org/pdf/1701.07875.pdf), for detailed proof, please refer to the original papers. In 2014, a new framework for generative models: [Generative Adversarial Nets(GANs)](https://arxiv.org/pdf/1406.2661.pdf) was introduced using the nowadays deep learning frameworks and achieved great success. However, unlike some other supervised classification tasks, GANs are often found to be **difficult**(the generator generate nothing but garbage), **unstable**(the training losses do not converge), and suffers from **mode collapsing**(the generative fail to generative diverse samples). Notice that previous GANs suffer these problems, WGANs, a new GANs framework came out to solve them. 
 
 This blog will introduce 3 papers:
 
@@ -87,6 +87,8 @@ In real cases, we can prove that there is always a **perfect** discriminator $$D
 - __Perfect Discriminator Theorem([Section 2.1](https://arxiv.org/pdf/1701.04862.pdf))__
 
 Assume that the [supports](https://en.wikipedia.org/wiki/Support_(mathematics)) of our real sample distribution $$\mathbb{P}_r$$ and our generated sample distribution $$\mathbb{P}_g$$ are [submanifolds](https://en.wikipedia.org/wiki/Submanifold) $$\mathcal{M}$$ and $$\mathcal{P}$$ in our feature space $$\mathcal{X}$$(the vector space of final fully connected layer in the discriminator network). Then we can always find a optimal discriminator $$D(x)\rightarrow[0,1]$$, s.t. $$D(x)=1,(x\in\mathcal{M})$$, $$D(x)=0,(x\in\mathcal{P})$$ and $$\nabla_xD(x)=0,({x\in\mathcal{M}\cup\mathcal{P}})$$ [almost everywhere](https://en.wikipedia.org/wiki/Almost_everywhere).
+
+To intuitively understand this theorem, we can divide this problem in two parts: $$\mathcal{M}\cap\mathcal{P}=\emptyset$$ and $$\mathcal{M}\cap\mathcal{P}\neq\emptyset$$ 
 
 ```markdown
 Syntax highlighted code block
