@@ -98,6 +98,4 @@ In the picture above, assume that $$\mathcal{M}$$ is the red submanifold and $$\
 
 (b) When: $$\mathcal{M}\cap\mathcal{P}\neq\emptyset$$
 
-
-
-
+To understand the proof in this case, we have to introduce a mathematical idea of [Transversal Intersection](http://mathworld.wolfram.com/TransversalIntersection.html) and [perfectly aligned(definition 2.2)](https://arxiv.org/pdf/1701.04862.pdf) between two manifolds. If you don't understand the math behind these two idea, it is totally fine, these following two pictures will give you some idea about perfect aligned manifolds and not perfectly aligned manifolds:
