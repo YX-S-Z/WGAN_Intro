@@ -104,7 +104,7 @@ From the picture above, although we randomly choose 64 $$z$$ from our prior, man
 
 Since the original GANs suffers from mode __unstability__ and __mode collapsing__, this paper provides rigious proof to say why previous GANs will eventually encouter those two issues and provides a __better cost function(or a better metric to evaluate the 'similarity' between two probability distributions)__ to avoid these issues. 
 
-### The reasons for failure in training GANs
+### The reasons for generator failure in GANs
 
 In real cases, we can prove that there is always a **perfect** discriminator $$D^*(x)$$ that can perfectly distinguish real data from generated data, and gradient descend method **has no effect** on this discriminator $$D^*(x)$$, which explains why our __discriminator gets better and our generator fails__ during training.
 
@@ -184,3 +184,5 @@ Guess what, right now we have two disjoint manifold($$\tilde{\mathcal{M}}$$ and 
 
 Okay, at this point, we have intuitively went through the proof of the __perfectly discriminator theorem__. And this theorem explains why the traditional way of training GANs will sometimes encounter generator failure.
 
+
+### The source of instability training loss in GANs 
