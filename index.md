@@ -3,7 +3,7 @@
 </script>
 # A Brief Introduction to Wasserstein GANs
 
-This blog is written to intuitively introduce the mathematical background of the well known paper [Wasserstein GANs(WGANs)](https://arxiv.org/pdf/1701.07875.pdf). In 2014, a new framework for generative models: [Generative Adversarial Nets(GANs)](https://arxiv.org/pdf/1406.2661.pdf) was introduced using the nowadays deep learning frameworks and achieved great success. However, unlike some other supervised classification tasks, GANs are often found to be **unstable**(the training losses do not converge) and suffers from **mode collapsing**(the generative fail to generative diverse samples). Notice that previous GANs suffer these problems, WGANs, a new GANs framework came out to solve them. 
+This blog is written to intuitively introduce the mathematical background of the well known paper [Wasserstein GANs(WGANs)](https://arxiv.org/pdf/1701.07875.pdf). In 2014, a new framework for generative models: [Generative Adversarial Nets(GANs)](https://arxiv.org/pdf/1406.2661.pdf) was introduced using the nowadays deep learning frameworks and achieved great success. However, unlike some other supervised classification tasks, GANs are often found to be **difficult**(the generator generate nothing but garbage), **unstable**(the training losses do not converge) and suffers from **mode collapsing**(the generative fail to generative diverse samples). Notice that previous GANs suffer these problems, WGANs, a new GANs framework came out to solve them. 
 
 This blog will introduce 3 papers:
 
@@ -59,6 +59,10 @@ It seems that by this minmax training process, we will have a generated distribu
 ### Problems in Traditional GANs:
 During the training of traditional GANs, we will frequently encounter these two problems: __instability__ and __mode collapsing__
 
+- __Difficulty__
+Not all training of GANs will finally generate meaningful results, what sometimes happens is that while the discriminator gets better during training, generator will fail and eventually generate garbage(source: [WGANs paper Figure 8](https://arxiv.org/pdf/1701.07875.pdf)).
+![image](https://github.com/simonzhai/WGAN_Intro/blob/master/images/Generator_faliure.png)
+
 - __Instability__
 
 During the training, we frequently found that our generator loss and its variance are increasing, even when their generated samples are getting better(source: [WGANs paper Figure 8](https://arxiv.org/pdf/1701.07875.pdf)):
@@ -76,6 +80,8 @@ From the picture above, although we randomly choose 64 $$z$$ from our prior, man
 Since the original GANs suffers from mode __unstability__ and __mode collapsing__, this paper provides rigious proof to say why previous GANs will eventually encouter those two issues and provides a __better cost function(or a better metric to evaluate the 'similarity' between two probability distributions)__ to avoid these issues. 
 
 ### Problems with JS/KL divergence as metric to evaluate 'similarity' between distributions
+
+
 
 ```markdown
 Syntax highlighted code block
