@@ -20,7 +20,9 @@ GANs introduced a new adversarial framework for training generative models: give
 
 ### Objective Function and its Mathematical Intuition:
 The objective function of GANs is this:
+
 $$ V(G, D) = \underset{G}{\min} \underset{D}{\max} \underset{x \sim \mathbb{P}_r}{\mathbb{E}}[\log D(x)] + \underset{z \sim \mathbb{P}}{\mathbb{E}}[\log (1-D(G(z)))] $$
+
 Where the generator $$G(z)$$ is a network that generate a real sample(image) by deconvolution and $$z$$ is an input from random noise distribution(normal distribution or uniform distribution) $$\mathbb{P}(z)$$. The discriminator $$D(x)$$ is a network(function) that represents the probability that our input samples(images) $$x$$ came from the real data rather than generative data, which indicates that: $$D(x) \in [0,1]$$. 
 
 During the training of discriminator networks $$D$$, we want the discriminator to accept real data and reject generated data, thus for real samples $$x \sim \mathbb{P}_r$$ and generated samples $$G(Z),z \sim \mathbb{P}$$, we want $$D(x)$$ to be large and $$D(G(z))$$ to be small. Thus, the objective function $$V(G, D)$$ suits this cases well: by increasing $$D(x)$$ and decreasing $$D(G(z))$$, we are actually increasing the objective function. On the contrary, while training generator networks $$G$$, we want our discriminator $$D$$ makes mistakes thus decreasing the objective function. 
@@ -31,7 +33,7 @@ During the training of discriminator networks $$D$$, we want the discriminator t
 The training algorithm for GANs from the [GANs Paper](https://arxiv.org/pdf/1406.2661.pdf) is show below:
 
 <p align="center">
-  <img src="https://github.com/simonzhai/WGAN_Intro/blob/master/images/GAN_Training_Algorithm.png?raw=true" width="480">
+  <img src="https://github.com/simonzhai/WGAN_Intro/blob/master/images/GAN_Training_Algorithm.png?raw=true" width="600">
 </p>
 
 - __Analysis of Discriminator__
@@ -54,7 +56,11 @@ $$C(G)=-\log4 + 2JSD(\mathbb{P}_r||\mathbb{P}_g)$$. By the quality of JS-diverge
 - __The -log Alternative__
 
 In real case, during the training of generator $$G$$, people found out that the cost of generator does not decrease after using SGD, the [GAN tutorial(section 3.2)](https://arxiv.org/pdf/1701.00160.pdf) claims this problem is caused by a saturated cost function of generator. Thus, the tutorial uses another cost function of $$-\log(x)$$ instead of $$\log(1-x)$$, that is, instead of minimizing $$C_1(G)=\underset{z \sim P}{\mathbb{E}}[\log (1-D(G(z)))]$$, we minimize $$C_2(G)=\underset{z \sim P}{\mathbb{E}}[-\log (D(G(z))]$$. The difference between these two functions are shown in the following picture:
-![image](https://github.com/simonzhai/WGAN_Intro/blob/master/images/-log_alternative.png?raw=true)
+
+<p align="center">
+  <img src="https://github.com/simonzhai/WGAN_Intro/blob/master/images/-log_alternative.png?raw=true" width="600">
+</p>
+
 Where the blue curve represents $$y=-\log(x)$$ and the the red curve represents $$y=\log(1-x)$$. Since our generator $$G$$ is updated after our discriminator $$D$$ is well trained, thus our discriminator will be stronger than our generator and $$D(G(z))$$ will be very small, say close to 0. In this case, we can learn from the picture above that the gradient of the red curve is much flatter than the blue curve, which means that SGD will have less effect on the first cost function $$C_1(G)$$. And thus, using $$C_2(G)$$ as an alternative seems to be a wiser choice in this case. 
 
 It seems that by this minmax training process, we will have a generated distribution $$\mathbb{P}_g$$ that is equal to our real distribution $$\mathbb{P}_r$$ almost everywhere, so by playing this minmax game until equilibria, our goal of generating 'authentic' data is achieved. Sadly, this problem is still far from closed.
@@ -65,17 +71,24 @@ During the training of traditional GANs, we will frequently encounter these thre
 - __Difficulty__
 
 Not all training of GANs will finally generate meaningful results, what sometimes happens is that while the discriminator gets better during training, generator will fail and eventually generate garbage(source: [WGANs paper Figure 12](https://arxiv.org/pdf/1701.07875.pdf)):
-![image](https://github.com/simonzhai/WGAN_Intro/blob/master/images/Generator_faliure.png?raw=true)
+
+<p align="center">
+  <img src="https://github.com/simonzhai/WGAN_Intro/blob/master/images/Generator_faliure.png?raw=true" width="600">
+</p>
 
 - __Instability__
 
 During the training, we frequently found that our generator loss and its variance are increasing, even when their generated samples are getting better(source: [WGANs paper Figure 8](https://arxiv.org/pdf/1701.07875.pdf)):
-![image](https://github.com/simonzhai/WGAN_Intro/blob/master/images/Unstable_generator.png?raw=true)
+<p align="center">
+  <img src="https://github.com/simonzhai/WGAN_Intro/blob/master/images/Unstable_generator.png?raw=true" width="600">
+</p>
 
 - __Mode Collapsing__
 
 Mode collapsing means that our generator fails to generate various data samples, instead, it 'collapses' into some fix samples(source [WGANs paper Figure 14](https://arxiv.org/pdf/1701.07875.pdf)):
-![image](https://github.com/simonzhai/WGAN_Intro/blob/master/images/Mode_collapse.png?raw=true)
+<p align="center">
+  <img src="https://github.com/simonzhai/WGAN_Intro/blob/master/images/Mode_collapse.png?raw=true" width="600">
+</p>
 
 From the picture above, although we randomly choose 64 $$z$$ from our prior, many generated results collapse into few images.
 
@@ -96,21 +109,32 @@ To intuitively understand this theorem, we can divide this problem in two parts:
 (a) When: $$\mathcal{M}\cap\mathcal{P}=\emptyset$$ 
 
 This means that the intersect between the supports of $$\mathbb{P}_r$$ and $$\mathbb{P}_g$$ is empty. In this cases, the following picture will provide some intuitive explanations(for detailed proof, check theorem 2.1 in [this paper](https://arxiv.org/pdf/1701.04862.pdf)):
-![image](https://github.com/simonzhai/WGAN_Intro/blob/master/images/Perfect_descriminator_below.png?raw=true)
+
+<p align="center">
+  <img src="https://github.com/simonzhai/WGAN_Intro/blob/master/images/Perfect_descriminator_below.png?raw=true" width="600">
+</p>
+
 In the picture above, assume that $$\mathcal{M}$$ is the red submanifold and $$\mathcal{P}$$ is the green submanifold, both of them are 2 dimensional manifolds in 3 dimensional space. An obvious optimal discriminator will be a sigmiod like surface, which classifies all points above the blue manifold with true and below blue manifold with fake. An interesting attribute of sigmoid like function is that it suffers from saturated gradients, in the picture above, we can learn that this discriminator(blue manifold) can perfectly discriminate these two manifolds and gradient descend does not work on the supports of the $$\mathcal{M}$$(green manifold) and $$\mathcal{P}$$(red manifold).
 
 (b) When: $$\mathcal{M}\cap\mathcal{P}\neq\emptyset$$
 
 To understand the proof in this case, we have to introduce a mathematical idea of [Transversal Intersection](http://mathworld.wolfram.com/TransversalIntersection.html) and [perfectly aligned(definition 2.2)](https://arxiv.org/pdf/1701.04862.pdf) between two manifolds. If you don't understand the math behind these two idea, it is totally fine, these following two pictures will give you some idea about perfect aligned manifolds and not perfectly aligned manifolds:
-![image](https://github.com/simonzhai/WGAN_Intro/blob/master/images/perfectly_align.png?raw=true)
+
+<p align="center">
+  <img src="https://github.com/simonzhai/WGAN_Intro/blob/master/images/perfectly_align.png?raw=true" width="600">
+</p>
 
 __two perfectly aligned circles in 3 dimensional space, their intersection is a oval like shape(2 dimensional manifold)__
 
-![image](https://github.com/simonzhai/WGAN_Intro/blob/master/images/not_perfectly_align.png?raw=true)
+<p align="center">
+  <img src="https://github.com/simonzhai/WGAN_Intro/blob/master/images/not_perfectly_align.png?raw=true" width="600">
+</p>
 
 __two not perfectly aligned circles in 3 dimensional space, their intersection is a line segment(1 dimensional manifold)__
 
-![image](https://github.com/simonzhai/WGAN_Intro/blob/master/images/Not_perfectly_align_gaussian.png?raw=true)
+<p align="center">
+  <img src="https://github.com/simonzhai/WGAN_Intro/blob/master/images/Not_perfectly_align_gaussian.png?raw=true" width="600">
+</p>
 
 __two not perfectly aligned gaussian spheres in 3 dimensional space, their intersection is a curve between the green and red gaussian distribution(1 dimensional manifold)__
 
@@ -118,8 +142,9 @@ From the previous pictures we can have some intuitive concepts about __perfectly
 
 Also, [lemma 2](https://arxiv.org/pdf/1701.04862.pdf) tells us that in real case, the probability that two random distributions are perfectly aligned are actually __extremely small(equals to 0)__. Here are some pictures to intuitively explain this lemma:
 
-![image](https://github.com/simonzhai/WGAN_Intro/blob/master/images/Nearly_perfectly_align_gaussian.png?raw=true)
-<img src="https://github.com/simonzhai/WGAN_Intro/blob/master/images/Nearly_perfectly_align_gaussian.png?raw=true" width="48">
+<p align="center">
+<img src="https://github.com/simonzhai/WGAN_Intro/blob/master/images/Nearly_perfectly_align_gaussian.png?raw=true" width="600">
+</p>
 
 __In this picture, I shift the red gaussian distribution by -0.01 to the left and the greed gaussian distribution by +0.01 to the right, their intersection is still a curve(1 dimensional manifold)__
 
