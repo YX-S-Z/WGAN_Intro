@@ -156,7 +156,7 @@ Well here is another vivid yet a little bit bloody example: imagine that every p
 <img src="https://github.com/simonzhai/WGAN_Intro/blob/master/images/Two_men.png?raw=true" width="360">
 </p>
 
-Well sometimes, there is some probability when the manifold of two people intersect with each other(this situation happens when these 2 guys are having body contact, e.g. hand handshaking, hugging, etc.). 
+Well sometimes, there is some probability when the manifolds of two people intersect with each other(this situation happens when these 2 guys are having body contact, e.g. hand handshaking, hugging, etc.). 
 
 <p align="center">
 <img src="https://github.com/simonzhai/WGAN_Intro/blob/master/images/Handshake_two_men.png?raw=true" width="360">
