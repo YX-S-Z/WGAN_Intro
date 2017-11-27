@@ -75,7 +75,7 @@ From the picture above, although we randomly choose 64 $$z$$ from our prior, man
 ### Introduction
 Since the original GANs suffers from mode __unstability__ and __mode collapsing__, this paper provides rigious proof to say why previous GANs will eventually encouter those two issues and provides a __better cost function(or a better metric to evaluate the 'similarity' between two probability distributions)__ to avoid these issues. 
 
-### Problems with using JS/KL divergence as metric for evaluate the 'similarity' for two distribution
+### Problems with JS/KL divergence as metric to evaluate 'similarity' between distributions
 
 ```markdown
 Syntax highlighted code block
