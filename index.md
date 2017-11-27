@@ -149,3 +149,17 @@ Also, [lemma 2](https://arxiv.org/pdf/1701.04862.pdf) tells us that in real case
 - __two nearly perfectly aligned gaussian sphere(shift red manifold -0.01 to the left and the greed manifold by +0.01 to the right), their intersection is still a curve(1 dimensional manifold)__
 
 The picture above tells us one thing about this lemma: if I randomly put 2 manifolds of gaussian distributions into a 3 dimensional space, these two manifolds are perfectly aligned if and only if the parameters(mean vector and covariance matrix) are the same. Intuitively speaking, this probability is extremely small.
+
+Well here is another vivid yet a little bit bloody example: Imagine that every person is a 3 dimensional manifold in our 4 dimensional space(time is added as another dimension). If all people are randomly distributed in this 4 dimensional space, in most cases, given 2 people, they are disjoint. 
+
+<p align="center">
+<img src="https://github.com/simonzhai/WGAN_Intro/blob/master/images/Two_men.png?raw=true" width="480">
+</p>
+
+Well sometimes, there is some probability when the manifold of two people intersect with each other(this situation happens when these 2 guys are having body contact, e.g. hand handshaking, hugging, etc.). 
+
+<p align="center">
+<img src="https://github.com/simonzhai/WGAN_Intro/blob/master/images/Two_men.png?raw=true" width="480">
+</p>
+
+However, the situation that the two manifolds of these two people are perfectly aligned is when __a part of one guy's body is inside of the other__, which is extremely rare in real cases. This may sound very bloody, but it will give you some intuition why the manifold of two random probability distribution barely perfectly aligned.
