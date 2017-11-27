@@ -3,7 +3,7 @@
 </script>
 # A Brief Introduction to Wasserstein GANs
 
-This blog is written to intuitively introduce the mathematical background of the well known paper [Wasserstein GANs(WGANs)](https://arxiv.org/pdf/1701.07875.pdf). In 2014, a new framework for generative models: [Generative Adversarial Nets(GANs)](https://arxiv.org/pdf/1406.2661.pdf) was introduced using the nowadays deep learning frameworks and achieved great success. However, unlike some other supervised classification tasks, GANs are often found to be **difficult**(the generator generate nothing but garbage), **unstable**(the training losses do not converge) and suffers from **mode collapsing**(the generative fail to generative diverse samples). Notice that previous GANs suffer these problems, WGANs, a new GANs framework came out to solve them. 
+This blog is written to intuitively introduce the mathematical background of the well known paper [Wasserstein GANs(WGANs)](https://arxiv.org/pdf/1701.07875.pdf). In 2014, a new framework for generative models: [Generative Adversarial Nets(GANs)](https://arxiv.org/pdf/1406.2661.pdf) was introduced using the nowadays deep learning frameworks and achieved great success. However, unlike some other supervised classification tasks, GANs are often found to be **difficult**(the generator generate nothing but garbage), **unstable**(the training losses do not converge), and suffers from **mode collapsing**(the generative fail to generative diverse samples). Notice that previous GANs suffer these problems, WGANs, a new GANs framework came out to solve them. 
 
 This blog will introduce 3 papers:
 
@@ -57,7 +57,7 @@ Where the blue curve represents $$y=-\log(x)$$ and the the red curve represents 
 It seems that by this minmax training process, we will have a generated distribution $$\mathbb{P}_g$$ that is equal to our real distribution $$\mathbb{P}_r$$ almost everywhere, so by playing this minmax game until equilibria, our goal of generating 'authentic' data is achieved. Sadly, this problem is still far from closed.
 
 ### Problems in Traditional GANs:
-During the training of traditional GANs, we will frequently encounter these two problems: __instability__ and __mode collapsing__
+During the training of traditional GANs, we will frequently encounter these three problems: __difficulty__, __instability__, and __mode collapsing__
 
 - __Difficulty__
 
