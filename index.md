@@ -1,6 +1,7 @@
 <script type="text/javascript" async
   src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
 </script>
+
 # A Brief Introduction to Wasserstein GANs
 
 This blog is written to __intuitively__ introduce the mathematical background of the well known paper [Wasserstein GANs(WGANs)](https://arxiv.org/pdf/1701.07875.pdf), for detailed proof, please refer to the original papers. In 2014, a new framework for generative models: [Generative Adversarial Nets(GANs)](https://arxiv.org/pdf/1406.2661.pdf) was introduced using the nowadays deep learning frameworks and achieved great success. However, unlike some other supervised classification tasks, GANs are often found to be **difficult**(the generator generate nothing but garbage), **unstable**(the training losses do not converge), and suffers from **mode collapsing**(the generative fail to generative diverse samples). Notice that previous GANs suffer these problems, WGANs, a new GANs framework came out to solve them. 
@@ -15,10 +16,13 @@ This blog will introduce 3 papers:
 
 
 ## Generative Adversarial Nets
+
 ### Introduction
+
 GANs introduced a new adversarial framework for training generative models: given some real samples(say images), simultaneously train a __generator(G)__ and a __discriminator(D)__, where **D** is trained to classify the real samples from those generative samples while **G** is trained to let **D** make mistakes during classification. 
 
 ### Objective Function and its Mathematical Intuition:
+
 The objective function of GANs is this:
 
 $$ V(G, D) = \underset{G}{\min} \underset{D}{\max} \underset{x \sim \mathbb{P}_r}{\mathbb{E}}[\log D(x)] + \underset{z \sim \mathbb{P}}{\mathbb{E}}[\log (1-D(G(z)))] $$
@@ -30,6 +34,7 @@ During the training of discriminator networks $$D$$, we want the discriminator t
 [This site](https://sigmoidal.io/beginners-review-of-gan-architectures/) will give you more information about the network architecture of GANs.
 
 ### Training Algorithm and Theoretical Results:
+
 The training algorithm for GANs from the [GANs Paper](https://arxiv.org/pdf/1406.2661.pdf) is show below:
 
 <p align="center">
@@ -66,6 +71,7 @@ Where the blue curve represents $$y=-\log(x)$$ and the the red curve represents 
 It seems that by this minmax training process, we will have a generated distribution $$\mathbb{P}_g$$ that is equal to our real distribution $$\mathbb{P}_r$$ almost everywhere, so by playing this minmax game until equilibria, our goal of generating 'authentic' data is achieved. Sadly, this problem is still far from closed.
 
 ### Problems in Traditional GANs:
+
 During the training of traditional GANs, we will frequently encounter these three problems: __difficulty__, __instability__, and __mode collapsing__
 
 - __Difficulty__
@@ -93,7 +99,9 @@ Mode collapsing means that our generator fails to generate various data samples,
 From the picture above, although we randomly choose 64 $$z$$ from our prior, many generated results collapse into few images.
 
 ## Towards Principled Methods for Training Generative Adversarial Networks
+
 ### Introduction
+
 Since the original GANs suffers from mode __unstability__ and __mode collapsing__, this paper provides rigious proof to say why previous GANs will eventually encouter those two issues and provides a __better cost function(or a better metric to evaluate the 'similarity' between two probability distributions)__ to avoid these issues. 
 
 ### The reasons for failure in training GANs
@@ -175,3 +183,4 @@ Also, we can denote $$\mathcal{L} = \mathcal{M} \cap \mathcal{P}$$ as the inters
 Guess what, right now we have two disjoint manifold($$\tilde{\mathcal{M}}$$ and $$\tilde{\mathcal{P}}$$) again! And by the same process from part (a), we can still find a optimal discriminator $$D^*(x)$$, s.t. $$D^*(x)$$ can perfectly discriminate $$\tilde{\mathcal{M}}$$ and $$\tilde{\mathcal{P}}$$! Well, how about the intersection $$\mathcal{L}$$? Well, recall the definition of [almost everywhere](https://en.wikipedia.org/wiki/Almost_everywhere) we mentioned before, we actually don't care about the classification on $$\mathcal{L}$$, because the size(measure) of $$\mathcal{L}$$ is too small with respect to $$\mathcal{M}$$ and $$\mathcal{P}$$.
 
 Okay, at this point, we have went through the proof of the __perfectly discriminator theorem__ intuitively. By this theorem explains why the traditional way of training GANs will sometimes encounter generator failure.
+
