@@ -31,7 +31,7 @@ During the training of discriminator networks $$D$$, we want the discriminator t
 The training algorithm for GANs from the [GANs Paper](https://arxiv.org/pdf/1406.2661.pdf) is show below:
 
 <p align="center">
-  <img src="https://github.com/simonzhai/WGAN_Intro/blob/master/images/GAN_Training_Algorithm.png?raw=true" width="600">
+  <img src="https://github.com/simonzhai/WGAN_Intro/blob/master/images/GAN_Training_Algorithm.png?raw=true" width="480">
 </p>
 
 - __Analysis of Discriminator__
