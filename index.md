@@ -73,8 +73,9 @@ From the picture above, although we randomly choose 64 $$z$$ from our prior, man
 
 ## Towards Principled Methods for Training Generative Adversarial Networks
 ### Introduction
-Since the original GANs suffer from mode unstability and mode collapsing, this paper provides rigious proof to say why previous GANs will eventually encouter such issues and a suitable solutions to solve them. 
+Since the original GANs suffers from mode __unstability__ and __mode collapsing__, this paper provides rigious proof to say why previous GANs will eventually encouter those two issues and provides a __better cost function(or a better metric to evaluate the 'distance' between two probability distributions)__ to avoid these issues. 
 
+### 
 
 ```markdown
 Syntax highlighted code block
