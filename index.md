@@ -60,6 +60,7 @@ It seems that by this minmax training process, we will have a generated distribu
 During the training of traditional GANs, we will frequently encounter these two problems: __instability__ and __mode collapsing__
 
 - __Difficulty__
+
 Not all training of GANs will finally generate meaningful results, what sometimes happens is that while the discriminator gets better during training, generator will fail and eventually generate garbage(source: [WGANs paper Figure 8](https://arxiv.org/pdf/1701.07875.pdf)):
 ![image](https://github.com/simonzhai/WGAN_Intro/blob/master/images/Generator_faliure.png?raw=true)
 
