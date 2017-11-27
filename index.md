@@ -90,7 +90,7 @@ Assume that the [supports](https://en.wikipedia.org/wiki/Support_(mathematics)) 
 
 To intuitively understand this theorem, we can divide this problem in two parts: $$\mathcal{M}\cap\mathcal{P}=\emptyset$$ and $$\mathcal{M}\cap\mathcal{P}\neq\emptyset$$ 
 
-1. $$\mathcal{M}\cap\mathcal{P}=\emptyset$$ 
+1. When: $$\mathcal{M}\cap\mathcal{P}=\emptyset$$ 
 
 This means that the intersect between the supports of $$\mathbb{P}_r$$ and $$\mathbb{P}_g$$ is empty. In this cases, the following picture will provide some intuitive explanations:
 ![image](https://github.com/simonzhai/WGAN_Intro/blob/master/images/Perfect_discriminator.png?raw=true)
