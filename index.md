@@ -46,7 +46,7 @@ According to the training algorithm, we start training our generator when our di
 $$C(G)=\underset{x \sim \mathbb{P}_r}{\mathbb{E}}[\log \frac{P_r(x)}{P_r(x)+P_g(x)}] + \underset{x \sim P_g}{\mathbb{E}}[\log \frac{P_g(x)}{P_r(x)+P_g(x)}]$$
 
 Using some trick in [KL divergence](https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence) and [Jensen–Shannon divergence](https://en.wikipedia.org/wiki/Jensen%E2%80%93Shannon_divergence), our objective function for $$G$$ can be written in this way: 
-$$C(G)=-\log4 + 2JSD(\mathbb{P}_r||\mathbb{P}_g)$$. By the quality of JS-divergence, we know that: $$JSD(\mathbb{P}||\mathbb{Q})\in[0,\log2]$$. So ideally, when the objective function $$C(G)$$ reaches its minimum, we have $$JSD(\mathbb{P}_r||\mathbb{P}_g)=0$$, which indicates that $$P_r(x)=P_g(x)$$ almost everywhere. 
+$$C(G)=-\log4 + 2JSD(\mathbb{P}_r||\mathbb{P}_g)$$. By the quality of JS-divergence, we know that: $$JSD(\mathbb{P}||\mathbb{Q})\in[0,\log2]$$. So ideally, when the objective function $$C(G)$$ reaches its minimum, we have $$JSD(\mathbb{P}_r||\mathbb{P}_g)=0$$, which indicates that $$P_r(x)=P_g(x)$$ [almost everywhere](https://en.wikipedia.org/wiki/Almost_everywhere). 
 
 - __The -log Alternative__
 
@@ -82,7 +82,7 @@ Since the original GANs suffers from mode __unstability__ and __mode collapsing_
 
 ### The reasons for failure in training GANs
 
-In real cases, we can assume that the [supports](https://en.wikipedia.org/wiki/Support_(mathematics)) of our real sample distribution $$\mathbb{P}_r$$ and our generated sample distribution $$\mathbb{P}_g$$ are [submanifolds](https://en.wikipedia.org/wiki/Submanifold) $$\mathcal{M}$$ and $$\mathcal{P}$$ in our feature space $$\mathcal{X}$$(the vector space of final fully connected layer in the discriminator network). And we can always find a optimal discriminator $$D(x)\arrow [0,1]$$, s.t. $$D(x)|_{x\in\mathcal{M}}=1$$, $$D(x)|_{x\in\mathcal{P}}=0$$ and $$\nabla_xD(x)|_{x\in\mathcal{M}\cup\mathcal{P}}=0$$ almost everywhere.
+In real cases, we can assume that the [supports](https://en.wikipedia.org/wiki/Support_(mathematics)) of our real sample distribution $$\mathbb{P}_r$$ and our generated sample distribution $$\mathbb{P}_g$$ are [submanifolds](https://en.wikipedia.org/wiki/Submanifold) $$\mathcal{M}$$ and $$\mathcal{P}$$ in our feature space $$\mathcal{X}$$(the vector space of final fully connected layer in the discriminator network). And we can always find a optimal discriminator $$D(x)\rightarrow [0,1]$$, s.t. $$D(x)|_{x\in\mathcal{M}}=1$$, $$D(x)|_{x\in\mathcal{P}}=0$$ and $$\nabla_xD(x)|_{x\in\mathcal{M}\cup\mathcal{P}}=0$$ [almost everywhere](https://en.wikipedia.org/wiki/Almost_everywhere).
 
 ```markdown
 Syntax highlighted code block
