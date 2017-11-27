@@ -186,3 +186,15 @@ Okay, at this point, we have intuitively went through the proof of the __perfect
 
 
 ### The source of instability training loss in GANs 
+
+Recall the two cost functions of our generator in the __-log alternative__ section: 
+
+$$C_1(G)=\underset{z \sim P}{\mathbb{E}}[\log (1-D(G(z)))]$$
+
+$$C_2(G)=\underset{z \sim P}{\mathbb{E}}[-\log (D(G(z))]$$
+
+Actually these two cost functions suffer from some issues. 
+
+- __Vanishing Gradient on $$C_1$$__
+
+If we use
