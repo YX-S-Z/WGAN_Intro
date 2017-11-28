@@ -258,4 +258,4 @@ The key idea of training a generator is to __train a distribution that is as sim
 <img src="https://github.com/simonzhai/WGAN_Intro/blob/master/images/JSD.png?raw=true" width="450">
 </p>
 
-Noticed that the measure of $$mathcal{L}$$ is 0 on $$\mathcal{M}$$ and $$\mathcal{P}$$, thus the intergral $$\underset{\mathcal{L}}{\int} P_r\log \frac{P_r}{P_g}dx$$ and $$\underset{\mathcal{L}}{\int} P_r\log\frac{P_r}{\frac{1}{2}(P_r+P_g)}dx$$ equal to 0. Also, since $$\tilde{\mathcal{M}}$$ and $$\tilde{\mathcal{P}}$$ disjoint support of $$\mathbb{P}_r$$ and $$\mathbb{P}_g$$, then we know that $$P_r(x)\mid_{x\in\tilde{\mathcal{P}}}=0$$ and $$P_g(x)\mid_{x\in\tilde{\mathcal{M}}}=0$$.
+Noticed that the measure of $$\mathcal{L}$$ is 0 on $$\mathcal{M}$$ and $$\mathcal{P}$$, thus the intergral $$\underset{\mathcal{L}}{\int} P_r\log \frac{P_r}{P_g}dx$$ and $$\underset{\mathcal{L}}{\int} P_r\log\frac{P_r}{\frac{1}{2}(P_r+P_g)}dx$$ equal to 0. Also, since $$\tilde{\mathcal{M}}$$ and $$\tilde{\mathcal{P}}$$ disjoint support of $$\mathbb{P}_r$$ and $$\mathbb{P}_g$$, then we know that $$P_r(x)\mid_{x\in\tilde{\mathcal{P}}}=0$$ and $$P_g(x)\mid_{x\in\tilde{\mathcal{M}}}=0$$.
