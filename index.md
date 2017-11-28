@@ -4,7 +4,7 @@
 
 # A Brief Introduction to Wasserstein GANs
 
-This blog is written to __intuitively__ introduce the mathematical background of the well known paper [Wasserstein GANs(WGANs)](https://arxiv.org/pdf/1701.07875.pdf), for detailed proof, please refer to the original papers. In 2014, a new framework for generative models: [Generative Adversarial Nets(GANs)](https://arxiv.org/pdf/1406.2661.pdf) was introduced using the nowadays deep learning frameworks and achieved great success. However, unlike some other supervised classification tasks, GANs are often found to be **difficult**(the generator generate nothing but garbage), **unstable**(the training losses do not converge), and suffers from **mode collapsing**(the generative fail to generative diverse samples). Notice that previous GANs suffer these problems, WGANs, a new GANs framework came out to solve them. 
+This blog is written to __intuitively__ introduce the mathematical background of the well known paper [Wasserstein GANs(WGANs)](https://arxiv.org/pdf/1701.07875.pdf), for detailed proof, please refer to the original papers. In 2014, a new framework for generative models: [Generative Adversarial Nets(GANs)](https://arxiv.org/pdf/1406.2661.pdf) was introduced using the nowadays deep learning frameworks and achieved great success. However, unlike some other supervised classification tasks, GANs are often found to be **unsuccessful**(the generator generate nothing but garbage), **unstable**(the training losses do not converge), and suffers from **mode collapsing**(the generative fail to generative diverse samples). Notice that previous GANs suffer these problems, WGANs, a new GANs framework came out to solve them. 
 
 This blog will introduce 3 papers:
 
@@ -279,7 +279,7 @@ Where $$\gamma$$ is the set of all possible joint probability distribution on $$
 
 Here we introduce an interesting example([Example 1](https://arxiv.org/pdf/1701.07875.pdf)):
 
-Let $$Z\sim U[0,1]$$ be the uniform distribution on unit interval. Let $$\mathbb{P}_0$$ be the distribution of $$(0,Z)\in\mathbb{R}^2$$ and $$\mathbb{P}_\theta$$ be distribution $$(\theta,Z)\in\mathbb{R}^2$$. To be concise, the density function of $$\mathbb{P}_r$$ is: $$P_0(x,y)=1,(x=0,y\in[0,1]),P_0(x,y)=0,(\text{otherwise})$$ and the density function of $$\mathbb{P}_g$$ is: $$P_\theta(x,y)=1,(x=\theta,y\in[0,1]),P_\theta(x,y)=0,(\text{otherwise})$$. And here is a graph([source](https://www.alexirpan.com/2017/02/22/wasserstein-gan.html)) illustrate the case where $$\theta=1$$.
+Let $$Z\sim U[0,1]$$ be the uniform distribution on unit interval. Let $$\mathbb{P}_0$$ be the distribution of $$(0,Z)\in\mathbb{R}^2$$ and $$\mathbb{P}_\theta$$ be distribution $$(\theta,Z)\in\mathbb{R}^2$$. To be concise, the density function of $$\mathbb{P}_r$$ is: $$P_0(x,y)=1,(x=0,y\in[0,1]),P_0(x,y)=0,(\text{otherwise})$$ and the density function of $$\mathbb{P}_g$$ is: $$P_\theta(x,y)=1,(x=\theta,y\in[0,1]),P_\theta(x,y)=0,(\text{otherwise})$$. And here is a graph([From an interesting blog](https://www.alexirpan.com/2017/02/22/wasserstein-gan.html)) illustrate the case where $$\theta=1$$.
 
 <p align="center">
 <img src="https://github.com/simonzhai/WGAN_Intro/blob/master/images/Wgan_pic.png?raw=true" width="450">
@@ -306,3 +306,10 @@ $$W(\mathbb{P},\mathbb{Q}) = \underset{\gamma\in\Gamma}{\inf}\int_{\mathcal{X}\t
 The joint distribution with minimum total moving distance for $$\mathbb{P}_0$$ and $$\mathbb{P}_\theta$$ is: $$P((x_0,y_0),(x_\theta,y_\theta))=\delta(\text{when} x_0=0,x_\theta=\theta,y_0=y_\theta\in[0,1])$$ and $$P((x_0,y_0),(x_\theta,y_\theta))=0,\text{(otherwise)}$$. Here $$\delta$$ is a positive constant that keep the integral of this density distribution equals to 1.
 
 Thus, we can learn that the Wasserstein distance of $$\mathbb{P}_0$$ and $$\mathbb{P}_\theta$$ is $$\theta$$. From this example, we know that KL/JS divergence cannot serve as a good metric because they can only tell whether $$\mathbb{P}_0$$ and $$\mathbb{P}_\theta$$ are identical while Wasserstein distance can actually tell how 'close' $$\mathbb{P}_0$$ and $$\mathbb{P}_\theta$$ is. 
+
+The following picture illustrate the value of JS divergence and Wasserstein metric while $\theta$ is changing:
+
+<p align="center">
+<img src="https://github.com/simonzhai/WGAN_Intro/blob/master/images/Wgan_pic1.png?raw=true" width="450">
+</p>
+
