@@ -248,3 +248,13 @@ The key idea of training a generator is to __train a distribution that is as sim
 <p align="center">
 <img src="https://github.com/simonzhai/WGAN_Intro/blob/master/images/Theorem_2.3.png?raw=true" width="600">
 </p>
+
+Proof: 
+\[
+\begin{array}{lll}
+KL(\mathbb{P}_r||\mathbb{P}_g)&=&\underset{x\sim \mathbb{P}_r}{\mathbb{E}}[\log\frac{P_r}{P_g}]\\
+&=&\underset{\mathcal{M}}{\int} P_r\log \frac{P_r}{P_g}dx\\
+&=&\underset{\tilde{\mathcal{M}}}{\int} P_r\log \frac{P_r}{P_g}dx+\underset{\mathcal{L}}{\int} P_r\log \frac{P_r}{P_g}dx\\
+&=&\underset{\tilde{\mathcal{M}}}{\int} P_r\log \frac{P_r}{P_g}dx \rightarrow+\infty
+\end{array}
+\]
