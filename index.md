@@ -214,3 +214,11 @@ Using $$C_2(G)$$ as cost function for generator, when we train our discriminator
 (b) The expectation of $$C_2(G)$$'s gradient equals to the expectation of a [Cauchy distribution](https://en.wikipedia.org/wiki/Cauchy_distribution). This happens because the [ratio distribution of two Gaussian distributions](http://mathworld.wolfram.com/NormalRatioDistribution.html) is a Cauchy distribution. 
 
 (c) The [mean](https://en.wikipedia.org/wiki/Cauchy_distribution#Mean) and [variance](https://en.wikipedia.org/wiki/Cauchy_distribution#Higher_moments) of Cauchy distribution are undefined(infinity).
+
+The following pictures(figure 3 from [the paper](https://arxiv.org/pdf/1701.04862.pdf)) will provides some evidence of increasing generator cost and generator variance:
+
+<p align="center">
+<img src="https://github.com/simonzhai/WGAN_Intro/blob/master/images/increasing_gradient.png?raw=true" width="480">
+</p>
+
+
