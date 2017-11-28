@@ -285,4 +285,4 @@ Let $$Z\sim U[0,1]$$ be the uniform distribution on unit interval. Let $$\mathbb
 <img src="https://github.com/simonzhai/WGAN_Intro/blob/master/images/Wgan_pic.png?raw=true" width="450">
 </p>
 
-Obviously, in this picture, we can learn that $$KL(\mathbb{P}_0\parallel\mathbb{P}_\theta)=KL(\mathbb{P}_\theta\parallel\mathbb{P}_0=\infty$$
+Obviously, in this picture, we can learn that:  $$KL(\mathbb{P}_0\parallel\mathbb{P}_\theta)=KL(\mathbb{P}_\theta\parallel\mathbb{P}_0)=\infty$$ and $$JSD(\mathbb{P}_0\parallel\mathbb{P}_\theta)=\log2$$
