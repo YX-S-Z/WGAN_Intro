@@ -303,6 +303,6 @@ Now let's look at the Wasserstein distance again:
 
 $$W(\mathbb{P},\mathbb{Q}) = \underset{\gamma\in\Gamma}{\inf}\int_{\mathcal{X}\times\mathcal{X}}||x-y||_2d\gamma(x,y)$$
 
-The joint distribution with minimum total moving distance for $$\mathbb{P}_0$$ and $$\mathbb{P}_\theta$$ is: $$P((x_0,y_0),(x_\theta,y_\theta))=\delta(when x_0=0,x_\theta=\theta,y_0=y_\theta\in[0,1])$$ and $$P((x_0,y_0),(x_\theta,y_\theta))=0,\text{otherwise}$$. Here $$\delta$$ is a positive constant that keep the integral of this density distribution equals to 1.
+The joint distribution with minimum total moving distance for $$\mathbb{P}_0$$ and $$\mathbb{P}_\theta$$ is: $$P((x_0,y_0),(x_\theta,y_\theta))=\delta(\text{when} x_0=0,x_\theta=\theta,y_0=y_\theta\in[0,1])$$ and $$P((x_0,y_0),(x_\theta,y_\theta))=0,\text{(otherwise)}$$. Here $$\delta$$ is a positive constant that keep the integral of this density distribution equals to 1.
 
-Thus, we can learn that the Wasserstein distance of $$\mathbb{P}_0$$ and $$\mathbb{P}_\theta$$ is $$\theta$$.
+Thus, we can learn that the Wasserstein distance of $$\mathbb{P}_0$$ and $$\mathbb{P}_\theta$$ is $$\theta$$. From this example, we know that KL/JS divergence cannot serve as a good metric because they can only tell whether $$\mathbb{P}_0$$ and $$\mathbb{P}_\theta$$ are identical while Wasserstein distance can actually tell how 'close' $$\mathbb{P}_0$$ and $$\mathbb{P}_\theta$$ is. 
