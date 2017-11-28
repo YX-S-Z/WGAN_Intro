@@ -310,6 +310,6 @@ Thus, we can learn that the Wasserstein distance of $$\mathbb{P}_0$$ and $$\math
 The following picture illustrate the value of JS divergence and Wasserstein metric while $\theta$ is changing:
 
 <p align="center">
-<img src="https://github.com/simonzhai/WGAN_Intro/blob/master/images/Wgan_pic1.png?raw=true" width="450">
+<img src="https://github.com/simonzhai/WGAN_Intro/blob/master/images/Wgan_pic1.png?raw=true" width="600">
 </p>
 
