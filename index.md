@@ -251,7 +251,7 @@ The key idea of training a generator is to __train a distribution that is as sim
 
 - _Proof:_
 <p align="center">
-<img src="https://github.com/simonzhai/WGAN_Intro/blob/master/images/KL.png?raw=true" width="600">
+<img src="https://github.com/simonzhai/WGAN_Intro/blob/master/images/KL.png?raw=true" width="480">
 <img src="https://github.com/simonzhai/WGAN_Intro/blob/master/images/JSD.png?raw=true" width="600">
 </p>
 
