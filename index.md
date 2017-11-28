@@ -110,7 +110,7 @@ In real cases, we can prove that there is always a **perfect** discriminator $$D
 
 - __Perfect Discriminator Theorem([Section 2.1](https://arxiv.org/pdf/1701.04862.pdf))__
 
-Assume that the [supports](https://en.wikipedia.org/wiki/Support_(mathematics)) of our real sample distribution $$\mathbb{P}_r$$ and our generated sample distribution $$\mathbb{P}_g$$ are [submanifolds](https://en.wikipedia.org/wiki/Submanifold) $$\mathcal{M}$$ and $$\mathcal{P}$$ in our feature space $$\mathcal{X}$$(the vector space of final fully connected layer in the discriminator network). Then we can always find a optimal discriminator $$D(x)\rightarrow[0,1]$$, s.t. $$D(x)=1,(x\in\mathcal{M})$$, $$D(x)=0,(x\in\mathcal{P})$$ and $$\nabla_xD(x)=0,({x\in\mathcal{M}\cup\mathcal{P}})$$ [almost everywhere](https://en.wikipedia.org/wiki/Almost_everywhere).
+Assume that the [supports](https://en.wikipedia.org/wiki/Support_(mathematics)) of our real sample distribution $$\mathbb{P}_r$$ and our generated sample distribution $$\mathbb{P}_g$$ are [submanifolds](https://en.wikipedia.org/wiki/Submanifold) $$\mathcal{M}$$ and $$\mathcal{P}$$ in our feature space $$\mathcal{X}$$(the vector space of final fully connected layer in the discriminator network). Then we can always find a optimal discriminator $$D(x)\rightarrow[0,1]$$, s.t. $$D(x)\mid_{x\in\mathcal{M}}=1$$, $$D(x)\mid_{x\in\mathcal{P}}=0$$ and $$\nabla_xD(x)\mid_{x\in\mathcal{M}\cup\mathcal{P}}=0$$ [almost everywhere](https://en.wikipedia.org/wiki/Almost_everywhere).
 
 To intuitively understand this theorem, we can divide this problem in two parts: $$\mathcal{M}\cap\mathcal{P}=\emptyset$$ and $$\mathcal{M}\cap\mathcal{P}\neq\emptyset$$ 
 
@@ -233,3 +233,4 @@ The goal of generator is to generator a distribution $$\mathbb{P}_g$$ that is ve
 
 The argument from the picture above indicates one thing: if we use $$KL(\mathbb{P}_r\parallel\mathbb{P}_g)$$ as the generator's cost function, our model will fit an average of the real data resulting bad generator and if we use $$KL(\mathbb{P}_r\parallel\mathbb{P}_g)$$ instead, our model will fit into part of the Gaussian mixture incurring mode collapsing. For detailed explanation, please refer to the introduction of [this paper](https://arxiv.org/pdf/1701.04862.pdf).
 
+- __ __
