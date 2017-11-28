@@ -317,7 +317,7 @@ The following picture illustrate the value of JS divergence and Wasserstein metr
 
 Okay, now we learn that Wasserstein metric is indeed better than KL/JS divergence, but finding a joint distribution $$\gamma$$ that minimize $$W(\mathbb{P},\mathbb{Q}) = \int_{\mathcal{X}\times\mathcal{X}}||x-y||_2d\gamma(x,y)$$ is really intractable. But, thanks to the [Kantorovich-Rubinstein duality](https://en.wikipedia.org/wiki/Wasserstein_metric#Dual_representation_of_W1), we can actually change this form into a doable way: 
 
-$$W(\mathbb{P}_r,\mathbb{P}_g) = \underset{||f||_L\leq1}{\sup}\mathbb{E}_{x\sim\mathbb{P}_r}[f(x)]-\mathbb{E}_{x\sim\mathbb{P}_g}[f(x)]$$
+$$W(\mathbb{P}_r,\mathbb{P}_g) = \underset{\parallel f\parallel_L\leq1}{\sup}\mathbb{E}_{x\sim\mathbb{P}_r}[f(x)]-\mathbb{E}_{x\sim\mathbb{P}_g}[f(x)]$$
 
 Where $\parallel f\parallel_L\leq k$ is the [k-Lipschitz constraints](https://en.wikipedia.org/wiki/Lipschitz_continuity):
 
