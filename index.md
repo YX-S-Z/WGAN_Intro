@@ -279,10 +279,9 @@ Where $$\gamma$$ is the set of all possible joint probability distribution on $$
 
 Here we introduce an interesting example([Example 1](https://arxiv.org/pdf/1701.07875.pdf)):
 
-Let $$Z\sim U[0,1]$$ be the uniform distribution on unit interval. Let $$\mathbb{P}_0$$ be the distribution of $$(0,Z)\in\mathbb{R}^2$$ and $$\mathbb{P}_\theta$$ be distribution $$(\theta,Z)\in\mathbb{R}^2$$
+Let $$Z\sim U[0,1]$$ be the uniform distribution on unit interval. Let $$\mathbb{P}_0$$ be the distribution of $$(0,Z)\in\mathbb{R}^2$$ and $$\mathbb{P}_\theta$$ be distribution $$(\theta,Z)\in\mathbb{R}^2$$. And here is a graph([source](https://www.alexirpan.com/2017/02/22/wasserstein-gan.html)) illustrate the case where $$\theta=1$$.
 
 <p align="center">
 <img src="https://github.com/simonzhai/WGAN_Intro/blob/master/images/Wgan_pic.png?raw=true" width="450">
 </p>
 
-[source](https://www.alexirpan.com/2017/02/22/wasserstein-gan.html)
