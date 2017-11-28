@@ -272,3 +272,13 @@ $$W(\mathbb{P},\mathbb{Q}) = \underset{\gamma\in\Gamma}{\inf}\int_{\mathcal{X}\t
 
 Where $$\gamma$$ is the set of all possible joint probability distribution on $$\mathcal{X}\times\mathcal{X}$$ that have marginal on $$\mathbb{P}$$ and $$\mathbb{Q}$$. Don't be scared by this definition, this definition can be interpreted in this way: image the supports of probability distributions $$\mathbb{P}_r$$ and $$\mathbb{P}_g$$ are $$\mathcal{M}$$ and $$\mathcal{P}$$, we want to move all the points from one manifold $$\mathcal{P}$$ to construct manifold $$\mathcal{M}$$, and Wasserstein metric represents the __minimum__ total travel distance we have to move for __all the points__. [The third paper](https://arxiv.org/pdf/1701.07875.pdf) will provide an interesting example to compare the Wasserstein distance with KL/JS divergence. Also, [theorem 3.3](https://arxiv.org/pdf/1701.04862.pdf) can rigorously prove why Wasserstein distance is indeed a good metric, but that's not quite intuitive, so I did not include that part in this blog.
 
+
+## Wasserstein GAN
+
+### An example to compare KL/JS divergence with Wasserstein distance
+
+<p align="center">
+<img src="https://github.com/simonzhai/WGAN_Intro/blob/master/images/Wgan_pic.png?raw=true" width="450">
+</p>
+
+[source](https://www.alexirpan.com/2017/02/22/wasserstein-gan.html)
