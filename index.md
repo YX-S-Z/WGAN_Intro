@@ -279,7 +279,7 @@ Where $$\gamma$$ is the set of all possible joint probability distribution on $$
 
 Here we introduce an interesting example([Example 1](https://arxiv.org/pdf/1701.07875.pdf)):
 
-Let $$Z\sim U[0,1]$$ be the uniform distribution on unit interval. Let $$\mathbb{P}_0$$ be the distribution of $$(0,Z)\in\mathbb{R}^2$$ and $$\mathbb{P}_\theta$$ be distribution $$(\theta,Z)\in\mathbb{R}^2$$. And here is a graph([source](https://www.alexirpan.com/2017/02/22/wasserstein-gan.html)) illustrate the case where $$\theta=1$$.
+Let $$Z\sim U[0,1]$$ be the uniform distribution on unit interval. Let $$\mathbb{P}_0$$ be the distribution of $$(0,Z)\in\mathbb{R}^2$$ and $$\mathbb{P}_\theta$$ be distribution $$(\theta,Z)\in\mathbb{R}^2$$. To be concise, the density function of $$\mathbb{P}_r$$ is: $$P_r(x,y)=1,(x=0,y\in[0,1]),P_r(x,y)=0,(\text{otherwise})$$ and the density function of $$\mathbb{P}_g$$ is: $$P_g(x,y)=1,(x=\theta,y\in[0,1]),P_g(x,y)=0,(\text{otherwise})$$. And here is a graph([source](https://www.alexirpan.com/2017/02/22/wasserstein-gan.html)) illustrate the case where $$\theta=1$$.
 
 <p align="center">
 <img src="https://github.com/simonzhai/WGAN_Intro/blob/master/images/Wgan_pic.png?raw=true" width="450">
