@@ -225,3 +225,9 @@ Now we have went through the reasons for unstable generator loss during training
 
 ### The reasons for mode collapsing in GANs
 
+The goal of generator is to generator a distribution $$\mathbb{P}_g$$ that is very similar with our real data distribution $$\mathbb{P}_r$$, thus the cost function should reflect the similarity between our two distributions and minimizing the cost function will make our distributions more 'similar'. Ian Goodfellow mentions in his [tutorial on GANs(figure 14)](https://arxiv.org/pdf/1701.00160.pdf) that either KL divergence based or reverse KL divergence based cost function will provide bad generated results. 
+
+<p align="center">
+<img src="https://github.com/simonzhai/WGAN_Intro/blob/master/images/KL:ReverseKL.png?raw=true" width="600">
+</p>
+
