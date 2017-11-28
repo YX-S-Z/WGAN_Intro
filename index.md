@@ -211,4 +211,6 @@ Using $$C_2(G)$$ as cost function for generator, when we train our discriminator
 
 (a) Assume that the difference $$\epsilon=D^*-D$$ between our discriminator and the optimal discriminator is a centered Gaussian distribution, also the difference $$r=\nabla_xD^*-\nabla_xD$$ between the gradient of our discriminator and the optimal discriminator is another Gaussian distribution which is independent with $$\epsilon$$. 
 
-(b) The expectation of $C_2(G)$'s gradient equals to the expectation of a [Cauchy distribution](https://en.wikipedia.org/wiki/Cauchy_distribution). This happens because the [ratio distribution of two Gaussian distributions](http://mathworld.wolfram.com/NormalRatioDistribution.html) is a Cauchy distribution. 
+(b) The expectation of $$C_2(G)$$'s gradient equals to the expectation of a [Cauchy distribution](https://en.wikipedia.org/wiki/Cauchy_distribution). This happens because the [ratio distribution of two Gaussian distributions](http://mathworld.wolfram.com/NormalRatioDistribution.html) is a Cauchy distribution. 
+
+(c) The [mean](https://en.wikipedia.org/wiki/Cauchy_distribution#Mean) and [variance](https://en.wikipedia.org/wiki/Cauchy_distribution#Higher_moments) of Cauchy distribution are undefined(infinity).
