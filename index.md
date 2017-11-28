@@ -204,5 +204,5 @@ If we use $$C_1(G)$$ as our cost function for discriminator, [theorem 2.4](https
 However, $$C_2(G)$$ accounts for the instability in training. The proof of its instability is introduced in this theorem:
 
 <p align="center">
-<img src="https://github.com/simonzhai/WGAN_Intro/blob/master/images/Theorem2.6.png" width="360">
+<img src="https://github.com/simonzhai/WGAN_Intro/blob/master/images/Theorem2.6.png" width="600">
 </p>
