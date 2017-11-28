@@ -53,7 +53,7 @@ And by solving the gradient with respect to $$D(x)$$, we know that the optimal d
 
 According to the training algorithm, we start training our generator when our discriminator is welled trained, ideally, our discriminator $$D^*_G(x)=\frac{P_r(x)}{P_r(x)+P_g(x)}$$. So during the training of generator, we want to minimize our objective function
 
-$$C(G)=\underset{x \sim \mathbb{P}_r}{\mathbb{E}}[\log \frac{P_r(x)}{P_r(x)+P_g(x)}] + \underset{x \sim P_g}{\mathbb{E}}[\log \frac{P_g(x)}{P_r(x)+P_g(x)}]$$
+$$C(G)=\underset{x \sim \mathbb{P}_r}{\mathbb{E}}[\log \frac{P_r(x)}{P_r(x)+P_g(x)}] + \underset{x \sim \mathbb{P}_g}{\mathbb{E}}[\log \frac{P_g(x)}{P_r(x)+P_g(x)}]$$
 
 Using some trick in [KL divergence](https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence) and [Jensen–Shannon divergence](https://en.wikipedia.org/wiki/Jensen%E2%80%93Shannon_divergence), our objective function for $$G$$ can be written in this way: 
 $$C(G)=-\log4 + 2JSD(\mathbb{P}_r||\mathbb{P}_g)$$. By the quality of JS-divergence, we know that: $$JSD(\mathbb{P}||\mathbb{Q})\in[0,\log2]$$. So ideally, when the objective function $$C(G)$$ reaches its minimum, we have $$JSD(\mathbb{P}_r||\mathbb{P}_g)=0$$, which indicates that $$P_r(x)=P_g(x)$$ [almost everywhere](https://en.wikipedia.org/wiki/Almost_everywhere). 
@@ -201,9 +201,10 @@ If we use $$C_1(G)$$ as our cost function for discriminator, [theorem 2.4](https
 
 - __Unstable gradient on $$C_2$$__
 
-However, $$C_2(G)$$ accounts for the instability in training. The proof of its instability is introduced in this theorem, as before, I will briefly go through this theorem and make it more understandable:
+However, $$C_2(G)$$ accounts for the instability in training. The proof of its instability is introduced in this theorem from [the paper](https://arxiv.org/pdf/1701.04862.pdf), as before, I will briefly go through this theorem and make it more understandable:
 
 <p align="center">
 <img src="https://github.com/simonzhai/WGAN_Intro/blob/master/images/Theorem2.6.png?raw=true" width="600">
 </p>
+
 
