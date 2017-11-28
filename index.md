@@ -231,4 +231,4 @@ The goal of generator is to generator a distribution $$\mathbb{P}_g$$ that is ve
 <img src="https://github.com/simonzhai/WGAN_Intro/blob/master/images/KL:ReverseKL.png?raw=true" width="600">
 </p>
 
-The argument from the picture above indicates one thing: if we use $$KL(\mathbb{P}_r||\mathbb{P}_g)$$ as the generator's cost function, our model will fit an average of the real data resulting bad generator and if we use $KL(\mathbb{P}_r||\mathbb{P}_g)$$ instead, our model will fit into part of the Gaussian mixture incurring mode collapsing.
+The argument from the picture above indicates one thing: if we use $$KL(\mathbb{P}_r\text{II}\mathbb{P}_g)$$ as the generator's cost function, our model will fit an average of the real data resulting bad generator and if we use $KL(\mathbb{P}_r\text{II}\mathbb{P}_g)$$ instead, our model will fit into part of the Gaussian mixture incurring mode collapsing.
