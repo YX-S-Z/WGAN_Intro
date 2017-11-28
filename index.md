@@ -249,8 +249,9 @@ The key idea of training a generator is to __train a distribution that is as sim
 <img src="https://github.com/simonzhai/WGAN_Intro/blob/master/images/Theorem_2.3.png?raw=true" width="600">
 </p>
 
-- _Proof_:
+- _Proof:_
 
 $$KL(\mathbb{P}_r||\mathbb{P}_g)=\underset{\mathcal{M}}{\int} P_r\log \frac{P_r}{P_g}dx=\underset{\tilde{\mathcal{M}}}{\int} P_r\log \frac{P_r}{P_g}dx+\underset{\mathcal{L}}{\int} P_r\log \frac{P_r}{P_g}dx=\underset{\tilde{\mathcal{M}}}{\int} P_r\log \frac{P_r}{P_g}dx \rightarrow+\infty$$
 
-$$2JSD(\mathbb{P}_r||\mathbb{P}_g)=\underset{\mathcal{M}}{\int} P_r\log\frac{P_r}{\frac{1}{2}(P_r+P_g)}dx+\underset{\mathcal{P}}{\int}P_g\log\frac{P_g}{\frac{1}{2}(P_r+P_g)}dx=\underset{\tilde{\mathcal{M}}}{\int} P\log\frac{P_r}{\frac{1}{2}(P_r+P_g)}dx+\underset{\tilde{\mathcal{P}}}{\int}P_g\log\frac{P_g}{\frac{1}{2}(P_r+P_g)}dx+\underset{\mathcal{L}}{\int} P_r\log\frac{P_r}{\frac{1}{2}(P_r+P_g)}dx+\underset{\mathcal{L}}{\int} P_g\log\frac{P_g}{\frac{1}{2}(P_r+P_g)}dx=\underset{\tilde{\mathcal{M}}}{\int} P_r\log2dx+\underset{\tilde{\mathcal{P}}}{\int}P_g\log2dx=2\log2$$
+$$2JSD(\mathbb{P}_r||\mathbb{P}_g)$$|=$$\underset{\mathcal{M}}{\int} P_r\log\frac{P_r}{\frac{1}{2}(P_r+P_g)}dx+\underset{\mathcal{P}}{\int}P_g\log\frac{P_g}{\frac{1}{2}(P_r+P_g)}dx$$
+|$$=\underset{\tilde{\mathcal{M}}}{\int} P\log\frac{P_r}{\frac{1}{2}(P_r+P_g)}dx+\underset{\tilde{\mathcal{P}}}{\int}P_g\log\frac{P_g}{\frac{1}{2}(P_r+P_g)}dx+\underset{\mathcal{L}}{\int} P_r\log\frac{P_r}{\frac{1}{2}(P_r+P_g)}dx+\underset{\mathcal{L}}{\int} P_g\log\frac{P_g}{\frac{1}{2}(P_r+P_g)}dx=\underset{\tilde{\mathcal{M}}}{\int} P_r\log2dx+\underset{\tilde{\mathcal{P}}}{\int}P_g\log2dx=2\log2$$
