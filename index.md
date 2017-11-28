@@ -207,4 +207,8 @@ However, $$C_2(G)$$ accounts for the instability in training. The proof of its i
 <img src="https://github.com/simonzhai/WGAN_Intro/blob/master/images/Theorem2.6.png?raw=true" width="600">
 </p>
 
+Using $$C_2(G)$$ as cost function for generator, when we train our discriminator until convergence, these thing will happen:
 
+(a) Assume that the difference $$\epsilon=D^*-D$$ between our discriminator and the optimal discriminator is a centered Gaussian distribution, also the difference $$r=\nabla_xD^*-\nabla_xD$$ between the gradient of our discriminator and the optimal discriminator is another Gaussian distribution which is independent with $$\epsilon$$. 
+
+(b)
