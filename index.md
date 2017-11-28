@@ -218,7 +218,7 @@ Using $$C_2(G)$$ as cost function for generator, when we train our discriminator
 The following pictures(figure 3 from [the paper](https://arxiv.org/pdf/1701.04862.pdf)) will provides some evidence of increasing generator cost and generator variance:
 
 <p align="center">
-<img src="https://github.com/simonzhai/WGAN_Intro/blob/master/images/increasing_gradient.png?raw=true" width="480">
+<img src="https://github.com/simonzhai/WGAN_Intro/blob/master/images/increasing_gradient.png?raw=true" width="600">
 </p>
 
 
