@@ -336,3 +336,6 @@ And the results comparing with other GANs is here:
 <p align="center">
 <img src="https://github.com/simonzhai/WGAN_Intro/blob/master/images/WGAN_results.png?raw=true" width="600">
 </p>
+
+## Acknowledgement
+Thanks for [Dr. Hanwang Zhang](http://www.columbia.edu/~hz2471/) for meaningful suggestions on this blog, thanks for [Prof. Shih-fu Chang](http://www.ee.columbia.edu/~sfchang/) and people in [DVMM lab](http://www.ee.columbia.edu/ln/dvmm/) for discussion.
