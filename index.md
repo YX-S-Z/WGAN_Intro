@@ -298,3 +298,9 @@ $$KL(\mathbb{P}_0\parallel\mathbb{P}_\theta)=KL(\mathbb{P}_\theta\parallel\mathb
 As for Wasserstein distance in this case, remember the idea of __moving points from one distribution to construct the other__, here we want to find a joint distribution of $$\mathbb{P}_0$$ and $$\mathbb{P}_\theta$$, s.t. for any $$\theta$$, this distribution will have minimum total moving distance for all the points. 
 
 So intuitively, for this specific case, the minimum total moving distance here is to move all the points from $$\mathbb{P}_\theta$$ horizontally to the distribution $$\mathbb{P}_0$$, that is, find a mapping that map $$(\theta,y)$$ to $$(0,y)$$. 
+
+Now let's look at the Wasserstein distance again:
+
+$$W(\mathbb{P},\mathbb{Q}) = \underset{\gamma\in\Gamma}{\inf}\int_{\mathcal{X}\times\mathcal{X}}||x-y||_2d\gamma(x,y)$$
+
+The joint distribution for $$\mathbb{P}_0$$ and $$\mathbb{P}_\theta$$ is: $$P((x_0,y_0),(x_\theta,y_\theta))=\delta(when x_0=0,x_\theta=\theta,y_0=y_\theta\in[0,1])$$ and $$P((x_0,y_0),(x_\theta,y_\theta))=0,\text{otherwise}$$. Here $$\delta$$ is a positive constant that keep the integral of this density distribution equals to 1.
