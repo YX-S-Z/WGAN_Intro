@@ -239,4 +239,8 @@ The truth is, if we optimize our generator with the cost function $$C_1(G)$$, th
 <img src="https://github.com/simonzhai/WGAN_Intro/blob/master/images/Theorem2.5.png?raw=true" width="600">
 </p>
 
-From the picture above, we can see that the expectation $$C_2(G)$$'s gradient is actually the gradient of $$KL(\mathbb{P}_g\parallel\mathbb{P}_r)-2JSD(\mathbb{P}_g\parallel\mathbb{P}_r)$$, which indicates that we are actually decreasing a $$KL(\mathbb{P}_g\parallel\mathbb{P}_r)$$ based cost function since $$KL(\mathbb{P}_g\parallel\mathbb{P}_r)\in[0,\infty]$$ and $$JSD(\mathbb{P}_g\parallel\mathbb{P}_r)\in[0,\log2]$$.
+From the picture above, we can see that the expectation $$C_2(G)$$'s gradient is actually the gradient of $$KL(\mathbb{P}_g\parallel\mathbb{P}_r)-2JSD(\mathbb{P}_g\parallel\mathbb{P}_r)$$, which indicates that we are actually decreasing a $$KL(\mathbb{P}_g\parallel\mathbb{P}_r)$$ based cost function since $$KL(\mathbb{P}_g\parallel\mathbb{P}_r)\in[0,\infty]$$ and $$JSD(\mathbb{P}_g\parallel\mathbb{P}_r)\in[0,\log2]$$. As we mention before, use $$KL(\mathbb{P}_g\parallel\mathbb{P}_r)$$ based cost function will result in __mode collapsing__.
+
+### A better metric for measuring the similarity between two probability distribution.
+
+The key idea of training a generator is to __train a distribution that is as similar as possible to our real data distribution__. To achieve this goal, we will need a metric to reflect the 'similarity' between our generator's distribution and our real data's distribution. Ideally, this metric should some how reflect the 'distance' between two distributions, which means that if  Recall the perfect discriminator theorem we mentioned before,  
