@@ -201,8 +201,9 @@ If we use $$C_1(G)$$ as our cost function for discriminator, [theorem 2.4](https
 
 - __Unstable gradient on $$C_2$$__
 
-However, $$C_2(G)$$ accounts for the instability in training. The proof of its instability is introduced in this theorem:
+However, $$C_2(G)$$ accounts for the instability in training. The proof of its instability is introduced in this theorem, as before, I will briefly go through this theorem and make it more understandable:
 
 <p align="center">
-<img src="https://github.com/simonzhai/WGAN_Intro/blob/master/images/Theorem2.6.png" width="600">
+<img src="https://github.com/simonzhai/WGAN_Intro/blob/master/images/Theorem2.6.png?raw=true" width="600">
 </p>
+
