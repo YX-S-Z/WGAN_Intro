@@ -313,3 +313,13 @@ The following picture illustrate the value of JS divergence and Wasserstein metr
 <img src="https://github.com/simonzhai/WGAN_Intro/blob/master/images/Wgan_pic1.png?raw=true" width="600">
 </p>
 
+### Wasserstein GAN in application
+
+Okay, now we learn that Wasserstein metric is indeed better than KL/JS divergence, but finding a joint distribution $$\gamma$$ that minimize $$W(\mathbb{P},\mathbb{Q}) = \int_{\mathcal{X}\times\mathcal{X}}||x-y||_2d\gamma(x,y)$$ is really intractable. But, thanks to the [Kantorovich-Rubinstein duality](https://en.wikipedia.org/wiki/Wasserstein_metric#Dual_representation_of_W1), we can actually change this form into a doable way: 
+
+$$W(\mathbb{P}_r,\mathbb{P}_g) = \underset{||f||_L\leq1}{\sup}\mathbb{E}_{x\sim\mathbb{P}_r}[f(x)]-\mathbb{E}_{x\sim\mathbb{P}_g}[f(x)]$$
+
+Where $\parallel f\parallel_L\leq k$ is the [k-Lipschitz constraints](https://en.wikipedia.org/wiki/Lipschitz_continuity):
+
+$$f:\mathbb{R}^d\rightarrow\mathbb{R} \text{ s.t. } \parallel f(x_1)-f(x_2)\parallel_2\leq k \parallel x_1-x_2\parallel_2$$
+
