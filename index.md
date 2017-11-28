@@ -258,3 +258,4 @@ The key idea of training a generator is to __train a distribution that is as sim
 <img src="https://github.com/simonzhai/WGAN_Intro/blob/master/images/JSD.png?raw=true" width="450">
 </p>
 
+Noticed that the measure of $$mathcal{L}$$ is 0 on $$\tilde{\mathcal{M}}$$ and $$\tilde{\mathcal{P}}$$, thus the intergral $$\underset{\mathcal{L}}{\int} P_r\log \frac{P_r}{P_g}dx$$ and $$\underset{\mathcal{L}}{\int} P_r\log\frac{P_r}{\frac{1}{2}(P_r+P_g)}dx$$ equal to 0.
