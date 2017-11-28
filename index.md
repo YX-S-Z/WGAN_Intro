@@ -221,4 +221,7 @@ The following pictures(figure 3 from [the paper](https://arxiv.org/pdf/1701.0486
 <img src="https://github.com/simonzhai/WGAN_Intro/blob/master/images/increasing_gradient.png?raw=true" width="600">
 </p>
 
+Now we have went through the reasons for unstable generator loss during training in traditional GAN.
+
+### The reasons for mode collapsing in GANs
 
