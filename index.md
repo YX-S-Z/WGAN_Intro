@@ -197,4 +197,12 @@ Actually these two cost functions suffer from some issues.
 
 - __Vanishing Gradient on $$C_1$$__
 
-If we use
+If we use $$C_1(G)$$ as our cost function for discriminator, [theorem 2.4](https://arxiv.org/pdf/1701.04862.pdf) can provide a rigorous proof that the gradient of $$C_1(G)$$ will vanish if we train our discriminator $$D$$ until convergence. And since experiments have shown this result, people often use $$C_2(G)$$ instead of $$C_1(G)$$ as the generator cost.
+
+- __Unstable gradient on $$C_2$$__
+
+However, $$C_2(G)$$ accounts for the instability in training. The proof of its instability is introduced in this theorem:
+
+<p align="center">
+<img src="https://github.com/simonzhai/WGAN_Intro/blob/master/images/Theorem2.6.png" width="360">
+</p>
