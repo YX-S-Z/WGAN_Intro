@@ -323,3 +323,16 @@ Where $$\parallel f\parallel_L\leq k$$ is the [k-Lipschitz constraints](https://
 
 $$f:\mathbb{R}^d\rightarrow\mathbb{R} \text{ s.t. } \parallel f(x_1)-f(x_2)\parallel_2\leq k \parallel x_1-x_2\parallel_2$$
 
+Now the only unknown thing in this formula is the Lipschitz function $$f$$, this paper calls $$f$$ as 'critic' and uses a weight clipping method to parameterize the weight in $$f$$, but later on, a [new paper](https://arxiv.org/pdf/1704.00028.pdf) introduced an gradient penalty based WGAN and uses $$f$$ as discriminator that achieved state of the arts. 
+
+The training process of WGAN is here:
+
+<p align="center">
+<img src="https://github.com/simonzhai/WGAN_Intro/blob/master/images/WGAN_training.png?raw=true" width="600">
+</p>
+
+And the results comparing with other GANs is here:
+
+<p align="center">
+<img src="https://github.com/simonzhai/WGAN_Intro/blob/master/images/WGAN_results.png?raw=true" width="600">
+</p>
