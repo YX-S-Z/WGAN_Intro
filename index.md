@@ -126,7 +126,7 @@ In the picture above, assume that $$\mathcal{M}$$ is the red submanifold and $$\
 
 (b) When: $$\mathcal{M}\cap\mathcal{P}\neq\emptyset$$
 
-To understand the proof in this case, we have to introduce a mathematical idea of [Transversal Intersection](http://mathworld.wolfram.com/TransversalIntersection.html) and [perfectly aligned(definition 2.2)](https://arxiv.org/pdf/1701.04862.pdf) between two manifolds. If you don't understand the math behind these two idea, it is totally fine, these following pictures will give you some idea about perfect aligned manifolds and not perfectly aligned manifolds:
+To understand the proof in this case, we have to introduce a mathematical idea of [transversal intersection](http://mathworld.wolfram.com/TransversalIntersection.html) and [perfectly aligned(definition 2.2)](https://arxiv.org/pdf/1701.04862.pdf) between two manifolds. If you don't understand the math behind these two idea, it is totally fine, these following pictures will give you some idea about perfect aligned manifolds and not perfectly aligned manifolds:
 
 <p align="center">
   <img src="https://github.com/simonzhai/WGAN_Intro/blob/master/images/perfectly_align.png?raw=true" width="480">
@@ -231,6 +231,11 @@ The goal of generator is to generator a distribution $$\mathbb{P}_g$$ that is ve
 <img src="https://github.com/simonzhai/WGAN_Intro/blob/master/images/KL:ReverseKL.png?raw=true" width="600">
 </p>
 
-The argument from the picture above indicates one thing: if we use $$KL(\mathbb{P}_r\parallel\mathbb{P}_g)$$ as the generator's cost function, our model will fit an average of the real data resulting bad generator and if we use $$KL(\mathbb{P}_r\parallel\mathbb{P}_g)$$ instead, our model will fit into part of the Gaussian mixture incurring mode collapsing. For detailed explanation, please refer to the introduction of [this paper](https://arxiv.org/pdf/1701.04862.pdf).
+The argument from the picture above indicates one thing: if we use $$KL(\mathbb{P}_r\parallel\mathbb{P}_g)$$ as the generator's cost function, our model will fit an average of the real data resulting bad generator and if we use $$KL(\mathbb{P}_r\parallel\mathbb{P}_g)$$ instead, our model will fit into part of the Gaussian mixture incurring mode collapsing. For detailed explanation, please refer to the introduction of [this paper](https://arxiv.org/pdf/1701.04862.pdf). At this point, you may find it confusing: the cost function of our generator is a $$JSD(\mathbb{P}_r\parallel\mathbb{P}_g)$$, which is an 'average' of $$KL(\mathbb{P}_r\parallel\mathbb{P}_g)$$ and $$KL(\mathbb{P}_g\parallel\mathbb{P}_r)$$. Then why can't we balance this trade-off between fake results and mode collapsing?
 
-- __ __
+The truth is, if we optimize our generator with the cost function $$C_1(G)$$, then we are indeed decreasing $$JSD(\mathbb{P}_r\parallel\mathbb{P}_g)$$. However, in real case we are actually optimizing $$C_2(G)$$. And there is an interesting [theorem(theorem 2.5)](https://arxiv.org/pdf/1701.04862.pdf), indicating that minimizing $$C_2(G)$$ using SGD is actually minimizing a $$KL(\mathbb{P}_g\parallel\mathbb{P}_r)$$ based cost function.
+
+<p align="center">
+<img src="https://github.com/simonzhai/WGAN_Intro/blob/master/images/Theorem2.5.png?raw=true" width="600">
+</p>
+
