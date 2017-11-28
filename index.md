@@ -294,3 +294,5 @@ $$KL(\mathbb{P}_0\parallel\mathbb{P}_\theta)=KL(\mathbb{P}_\theta\parallel\mathb
 (b) When $$\theta=0$$
 
 $$KL(\mathbb{P}_0\parallel\mathbb{P}_\theta)=KL(\mathbb{P}_\theta\parallel\mathbb{P}_0)=0$$ and $$JSD(\mathbb{P}_0\parallel\mathbb{P}_\theta)=0$$
+
+As for Wasserstein distance in this case, remember the idea of __moving points from one distribution to construct the other__, here we want to find a joint distribution of $$\mathbb{P}_0$$ and $$\mathbb{P}_\theta$$, s.t. for any $$\theta$$, this distribution will have minimum total moving distance for all the points. 
