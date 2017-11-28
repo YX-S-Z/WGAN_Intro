@@ -319,7 +319,7 @@ Okay, now we learn that Wasserstein metric is indeed better than KL/JS divergenc
 
 $$W(\mathbb{P}_r,\mathbb{P}_g) = \underset{\parallel f\parallel_L\leq1}{\sup}\mathbb{E}_{x\sim\mathbb{P}_r}[f(x)]-\mathbb{E}_{x\sim\mathbb{P}_g}[f(x)]$$
 
-Where $\parallel f\parallel_L\leq k$ is the [k-Lipschitz constraints](https://en.wikipedia.org/wiki/Lipschitz_continuity):
+Where $$\parallel f\parallel_L\leq k$$ is the [k-Lipschitz constraints](https://en.wikipedia.org/wiki/Lipschitz_continuity):
 
 $$f:\mathbb{R}^d\rightarrow\mathbb{R} \text{ s.t. } \parallel f(x_1)-f(x_2)\parallel_2\leq k \parallel x_1-x_2\parallel_2$$
 
