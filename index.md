@@ -241,8 +241,9 @@ The truth is, if we optimize our generator with the cost function $$C_1(G)$$, th
 
 From the picture above, we can see that the expectation $$C_2(G)$$'s gradient is actually the gradient of $$KL(\mathbb{P}_g\parallel\mathbb{P}_r)-2JSD(\mathbb{P}_g\parallel\mathbb{P}_r)$$, which indicates that we are actually decreasing a $$KL(\mathbb{P}_g\parallel\mathbb{P}_r)$$ based cost function since $$KL(\mathbb{P}_g\parallel\mathbb{P}_r)\in[0,\infty]$$ and $$JSD(\mathbb{P}_g\parallel\mathbb{P}_r)\in[0,\log2]$$. As we mention before, use $$KL(\mathbb{P}_g\parallel\mathbb{P}_r)$$ based cost function will result in __mode collapsing__.
 
-### A better metric for measuring the similarity between two probability distribution.
+### A better metric for measuring the similarity between two probability distribution
 
+- __Why KL/JS divergence are not good metric__
 The key idea of training a generator is to __train a distribution that is as similar as possible to our real data distribution__. To achieve this goal, we will need a metric to __reflect the 'similarity' between our generator's distribution and our real data's distribution__. Ideally, this metric should some how reflect the 'distance' between two distributions, which means that if when two distribution __get more similar__, this metric should __have smaller value__. However, JS divergence and Kl divergence don't have this kind of quality. To prove this, recall the perfect discriminator theorem we mentioned before, we mentioned that $$\mathbb{P}_r$$ and $$\mathbb{P}_g$$ don't perfectly align. And by [this theorem(theorem 2.3)](https://arxiv.org/pdf/1701.04862.pdf), we know that as long as our two probability distribution $$\mathbb{P}_r$$ and $$\mathbb{P}_g$$ are not identical, $$KL(\mathbb{P}_g\parallel\mathbb{P}_r), KL(\mathbb{P}_g\parallel\mathbb{P}_r)$$ will max out.
 
 <p align="center">
@@ -259,3 +260,7 @@ The key idea of training a generator is to __train a distribution that is as sim
 </p>
 
 Noticed that the measure of $$\mathcal{L}$$ is 0 on $$\mathcal{M}$$ and $$\mathcal{P}$$, thus the intergral $$\underset{\mathcal{L}}{\int} P_r\log \frac{P_r}{P_g}dx$$ and $$\underset{\mathcal{L}}{\int} P_r\log\frac{P_r}{\frac{1}{2}(P_r+P_g)}dx$$ equal to 0. Also, since $$\tilde{\mathcal{M}}$$ and $$\tilde{\mathcal{P}}$$ disjoint support of $$\mathbb{P}_r$$ and $$\mathbb{P}_g$$, then we know that $$P_r(x)\mid_{x\in\tilde{\mathcal{P}}}=0$$ and $$P_g(x)\mid_{x\in\tilde{\mathcal{M}}}=0$$.
+
+And thus, we know that KL divergence and JS divergence are not good metric for measuring the 'similarity' between two distributions, because they __cannot reflect any improvement between two distributions when they are not perfectly aligned__, which is frequently happening in real case. 
+
+- __A better metric: Wasserstein distance__
