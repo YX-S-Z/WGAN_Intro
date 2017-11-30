@@ -4,9 +4,9 @@
 
 # A Brief Introduction to Wasserstein GANs
 
-This dog is written to __intuitively__ introduce the mathematical background of the well known paper [Wasserstein GANs(WGANs)](https://arxiv.org/pdf/1701.07875.pdf), for detailed proof, please refer to the original papers. In 2014, a new framework for generative models: [Generative Adversarial Nets(GANs)](https://arxiv.org/pdf/1406.2661.pdf) was introduced using the nowadays deep learning frameworks and achieved great success. However, unlike some other supervised classification tasks, GANs are often found to be **unsuccessful**(the generator generate nothing but garbage), **unstable**(the training losses do not converge), and suffers from **mode collapsing**(the generative fail to generative diverse samples). Notice that previous GANs suffer these problems, WGANs, a new GANs framework came out to solve them. 
+This blog is written to offer an __intuitive__ interpretation of the mathematical insights in the well known paper [Wasserstein GANs(WGANs)](https://arxiv.org/pdf/1701.07875.pdf). In 2014, a new deep learning framework for generative models: [Generative Adversarial Nets(GANs)](https://arxiv.org/pdf/1406.2661.pdf) was introduced with great success. However, unlike other deep generative models (e.g., Variational AutoEncoder), GANs are notoriously found to be **unsuccessful**(the generator generate nothing but garbage), **unstable**(the training losses do not converge), and suffers from the **mode collapse**(the generator fails to generative diverse samples). To this end, WGAN, a new GAN framework is invented. 
 
-This blog will introduce 3 papers:
+We will go through 3 papers step-by-step and you will eventually take a tumble to the bottom of GAN.
 
 - [Generative Adversarial Nets(GANs)](https://arxiv.org/pdf/1406.2661.pdf)
 
@@ -19,7 +19,7 @@ This blog will introduce 3 papers:
 
 ### Introduction
 
-GANs introduced a new adversarial framework for training generative models: given some real samples(say images), simultaneously train a __generator(G)__ and a __discriminator(D)__, where **D** is trained to classify the real samples from those generative samples while **G** is trained to let **D** make mistakes during classification. 
+GANs introduces a novel unsupervised training framework for generative models: adversarial learning. Given some "real" samples(say images), it simultaneously trains a __generator(G)__ to generate "fake" samples, and a __discriminator(D)__ to distinguish the "real" ones from "fake" ones. In the end, **G** will generate samples so real that **D** is unable to discrminate against them. 
 
 ### Objective Function and its Mathematical Intuition:
 
