@@ -25,11 +25,15 @@ GANs introduces a novel unsupervised training framework for generative models: a
 
 The objective function of GAN is:
 
-$$ V(G, D) = \underset{G}{\min} \underset{D}{\max} \underset{x \sim \mathbb{P}_r}{\mathbb{E}}[\log D(x)] + \underset{z \sim \mathbb{P}}{\mathbb{E}}[\log (1-D(G(z)))] $$
+$$ V(G, D) = \underset{G}{\min} \underset{D}{\max} \underset{x \sim \mathbb{P}_r}{\mathbb{E}}[\log D(x)] + \underset{z \sim \mathbb{P}}{\mathbb{E}}[\log (1-D(G(z)))] $$,
 
-Where the generator $$G(z)$$ is a network that generate a real sample(image) by deconvolution and $$z$$ is an input from random noise distribution(normal distribution or uniform distribution) $$\mathbb{P}(z)$$. The discriminator $$D(x)$$ is a network(function) that represents the probability that our input samples(images) $$x$$ came from the real data rather than generative data, which indicates that: $$D(x) \in [0,1]$$. 
+where $$z$$ is a "genesis" low-dimensional vector (e.g., sampled from a normal or uniform distribution), $$G(z)$$ is a generator (or decoder) network that generates a real sample from the "genesis" (e.g., through deconvolution to generate 256x256 images), and $$D(x)$$ is a discriminator network that represents the probability that our input samples(images) $$x$$ came from the real data rather than generative data, which indicates that: $$D(x) \in [0,1]$$. (hanwang: more explain about what is 0 and 1, say it directly)
 
 During the training of discriminator networks $$D$$, we want the discriminator to accept real data and reject generated data, thus for real samples $$x \sim \mathbb{P}_r$$ and generated samples $$G(Z),z \sim \mathbb{P}$$, we want $$D(x)$$ to be large and $$D(G(z))$$ to be small. Thus, the objective function $$V(G, D)$$ suits this cases well: by increasing $$D(x)$$ and decreasing $$D(G(z))$$, we are actually increasing the objective function. On the contrary, while training generator networks $$G$$, we want our discriminator $$D$$ makes mistakes thus decreasing the objective function. 
+
+Please tell that GAN can be considered as a data-driven metric learning problem. In this way, it would be helpful to understand why we need to redifine the distance using W-metric. from fully hand-crafted norm, to Mahanlonobis distance, to GAN. 
+
+
 
 [This site](https://sigmoidal.io/beginners-review-of-gan-architectures/) will give you more information about the network architecture of GANs.
 
