@@ -19,11 +19,11 @@ We will go through 3 papers step-by-step and you will eventually take a tumble t
 
 ### Introduction
 
-GANs introduces a novel unsupervised training framework for generative models: adversarial learning. Given some "real" samples(say images), it simultaneously trains a __generator(G)__ to generate "fake" samples, and a __discriminator(D)__ to distinguish the "real" ones from "fake" ones. In the end, **G** will generate samples so real that **D** is unable to discrminate against them. 
+GANs introduces a novel unsupervised training framework for generative models: adversarial learning. Given some "real" samples(say images), it simultaneously trains a __generator(G)__ to generate "fake" samples, and a __discriminator(D)__ to distinguish the "real" ones from "fake" ones. In the end, **G** will generate samples so real that **D** is unable to discriminate against them. 
 
 ### Objective Function and its Mathematical Intuition:
 
-The objective function of GANs is this:
+The objective function of GAN is:
 
 $$ V(G, D) = \underset{G}{\min} \underset{D}{\max} \underset{x \sim \mathbb{P}_r}{\mathbb{E}}[\log D(x)] + \underset{z \sim \mathbb{P}}{\mathbb{E}}[\log (1-D(G(z)))] $$
 
