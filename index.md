@@ -342,4 +342,4 @@ And the results comparing with other GANs is here:
 </p>
 
 ## Acknowledgement
-Thanks for [Dr. Hanwang Zhang](http://www.columbia.edu/~hz2471/) for meaningful suggestions on this blog, thanks for [Prof. Shih-fu Chang](http://www.ee.columbia.edu/~sfchang/) and people in [DVMM lab](http://www.ee.columbia.edu/ln/dvmm/) for discussion.
+Thanks for [Prof. Hanwang Zhang](http://www.ntu.edu.sg/home/hanwangzhang/) for meaningful suggestions and dedication on this blog.
